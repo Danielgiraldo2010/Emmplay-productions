@@ -39,7 +39,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center opacity-90 hover:opacity-100 transition-opacity duration-300">
             <Image
-              src="/logoemmplay.avif"
+              src="/logoemmplay.png"
               alt="Emmplay"
               width={140}
               height={40}

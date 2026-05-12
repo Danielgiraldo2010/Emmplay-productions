@@ -46,38 +46,38 @@ const socials = [
 export default function Footer() {
   return (
     <footer className="bg-[var(--bg)] border-t border-[var(--line)] px-6 sm:px-10 md:px-16 pt-12 sm:pt-16 pb-8">
-      <div className="max-w-[960px] mx-auto">
+      <div className="max-w-[1440px] mx-auto">
 
-        {/* Main row — 3 cols */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-8 pb-10 sm:pb-12 border-b border-[var(--line)]">
+        {/* Main row */}
+        <div className="grid grid-cols-1 sm:grid-cols-[1.4fr_1fr_1fr] gap-10 sm:gap-8 pb-10 border-b border-[var(--line)]">
 
           {/* Left — logo + statement */}
-          <div className="flex flex-col gap-5">
-            <Link href="/" className="opacity-80 hover:opacity-100 transition-opacity duration-300 inline-block">
+          <div className="flex flex-col gap-4">
+            <Link href="/" className="opacity-75 hover:opacity-100 transition-opacity duration-300 inline-block">
               <Image
-                src="/logoemmplay.avif"
+                src="/logoemmplay.png"
                 alt="Emmplay"
                 width={160}
                 height={44}
                 className="h-10 sm:h-11 w-auto object-contain"
               />
             </Link>
-            <p className="text-[12px] text-white/25 font-light leading-relaxed max-w-[200px]">
+            <p className="text-[12px] text-white/22 font-light leading-relaxed max-w-[220px]">
               Producción técnica de eventos que dejan huella.
             </p>
-            <p className="text-[11px] text-white/15 font-light">
+            <p className="text-[11px] text-white/12 font-light mt-1">
               Manizales, Caldas — Colombia
             </p>
           </div>
 
           {/* Center — nav */}
           <div className="flex flex-col gap-3">
-            <p className="text-[10px] tracking-[0.25em] uppercase text-white/20 mb-2">Navegación</p>
+            <p className="text-[10px] tracking-[0.25em] uppercase text-white/18 mb-1">Navegación</p>
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-[13px] text-white/35 hover:text-white/70 transition-colors duration-300 font-light"
+                className="text-[13px] text-white/30 hover:text-white/65 transition-colors duration-300 font-light"
               >
                 {link.label}
               </Link>
@@ -85,23 +85,23 @@ export default function Footer() {
           </div>
 
           {/* Right — contact + socials */}
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-6">
             <div>
-              <p className="text-[10px] tracking-[0.25em] uppercase text-white/20 mb-3">Contacto</p>
+              <p className="text-[10px] tracking-[0.25em] uppercase text-white/18 mb-3">Contacto</p>
               <div className="flex flex-col gap-2">
                 <a
                   href="https://api.whatsapp.com/send/?phone=3117883549&text&type=phone_number&app_absent=0"
                   target="_blank"
-                  className="text-[13px] text-white/35 hover:text-[var(--accent)] transition-colors duration-300 font-light"
+                  className="text-[13px] text-white/30 hover:text-[var(--accent)] transition-colors duration-300 font-light"
                 >
                   +57 311 788 3549
                 </a>
-                <p className="text-[13px] text-white/35 font-light">hola@emmplay.com</p>
+                <p className="text-[13px] text-white/30 font-light">hola@emmplay.com</p>
               </div>
             </div>
 
             <div>
-              <p className="text-[10px] tracking-[0.25em] uppercase text-white/20 mb-3">Redes</p>
+              <p className="text-[10px] tracking-[0.25em] uppercase text-white/18 mb-3">Redes</p>
               <div className="flex items-center gap-5">
                 {socials.map((s) => (
                   <Link
@@ -109,7 +109,7 @@ export default function Footer() {
                     href={s.href}
                     target="_blank"
                     aria-label={s.label}
-                    className="text-white/25 hover:text-[var(--accent)] transition-colors duration-300"
+                    className="text-white/22 hover:text-[var(--accent)] transition-colors duration-300"
                   >
                     {s.icon}
                   </Link>
@@ -120,9 +120,9 @@ export default function Footer() {
 
         </div>
 
-        {/* Bottom bar */}
-        <div className="pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
-          <p className="text-[11px] text-white/15 font-light">
+        {/* Bottom */}
+        <div className="pt-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+          <p className="text-[11px] text-white/14 font-light">
             © {new Date().getFullYear()} Emmplay Producciones S.A.S.
           </p>
           <p className="text-[11px] text-white/10 font-light">
