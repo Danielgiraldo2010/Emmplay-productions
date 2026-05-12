@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "Emmplay",
-  tagline: "Live Production. Global Scale.",
+  tagline: "Sonido. Luz. Experiencia.",
   description:
-    "Emmplay es una empresa de producción audiovisual y eventos de gran escala. Diseñamos, producimos y ejecutamos experiencias en vivo para artistas, marcas y audiencias internacionales.",
+    "Emmplay produce eventos de gran escala con tecnología de audio, iluminación, pantallas LED y estructuras escénicas de nivel internacional. Conciertos, corporativos, bodas y touring desde Colombia.",
   url: "https://emmplay.com",
   ogImage: "/og-image.jpg",
   links: {
@@ -23,136 +23,83 @@ export const navLinks = [
 export const services = [
   {
     id: "01",
-    title: "Live Event Production",
-    subtitle: "Producción en vivo",
+    title: "Audio\nProfesional",
+    tag: "Sound",
     description:
-      "Diseño técnico y ejecución de eventos masivos: conciertos, festivales, lanzamientos y experiencias corporativas de gran escala con infraestructura de nivel internacional.",
+      "Sistemas de sonido de alta fidelidad para conciertos, festivales y eventos corporativos. Line arrays, monitores y consolas de última generación.",
+    image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1600&q=90&auto=format&fit=crop",
   },
   {
     id: "02",
-    title: "Touring & Logistics",
-    subtitle: "Touring y logística",
+    title: "Iluminación\nEscénica",
+    tag: "Lighting",
     description:
-      "Gestión integral de giras nacionales e internacionales. Coordinación técnica, riders, avance de producción y operación en múltiples ciudades simultáneas.",
+      "Diseño lumínico que transforma espacios en experiencias inmersivas. Moving heads, LED wash, strobes y control automatizado para cualquier escala.",
+    image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1600&q=90&auto=format&fit=crop",
   },
   {
     id: "03",
-    title: "Stage & Set Design",
-    subtitle: "Diseño de escenarios",
+    title: "Pantallas\nLED",
+    tag: "Visual",
     description:
-      "Concepto, diseño y construcción de escenarios de alto impacto. Estructuras custom, LED walls, sistemas de iluminación y arquitectura efímera de primer nivel.",
+      "Paredes de video LED de alta resolución para escenarios, eventos corporativos y activaciones de marca. Indoor y outdoor.",
+    image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1600&q=90&auto=format&fit=crop",
   },
   {
     id: "04",
-    title: "Broadcast & Streaming",
-    subtitle: "Transmisión y broadcast",
+    title: "Broadcast &\nStreaming",
+    tag: "Broadcast",
     description:
-      "Producción multicámara, dirección de señal en vivo y distribución broadcast para audiencias globales. Calidad cinematográfica en tiempo real.",
+      "Producción multicámara y transmisión en vivo para audiencias globales. Calidad broadcast en tiempo real.",
+    image: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=1600&q=90&auto=format&fit=crop",
   },
   {
     id: "05",
-    title: "Brand Experiences",
-    subtitle: "Experiencias de marca",
+    title: "Estructuras &\nEscenarios",
+    tag: "Production",
     description:
-      "Activaciones inmersivas y experiencias de marca que generan impacto emocional duradero. Del concepto creativo a la ejecución técnica impecable.",
-  },
-  {
-    id: "06",
-    title: "Content & Post",
-    subtitle: "Contenido y postproducción",
-    description:
-      "Captura cinematográfica de eventos, edición, color grading y entrega de contenido premium para distribución multiplataforma.",
+      "Diseño, fabricación y montaje de estructuras escénicas custom. Tarimas, torres, techos y arquitectura efímera para cualquier formato.",
+    image: "https://images.unsplash.com/photo-1598387993441-a364f854cfbd?w=1600&q=90&auto=format&fit=crop",
   },
 ];
 
 export const clients = [
+  "Presidencia de la República",
+  "SENA",
+  "PlayVox",
   "Bancolombia",
-  "Movistar Arena",
-  "Postobón",
-  "Avianca",
   "Claro",
+  "Movistar Arena",
   "Rock al Parque",
-  "Alpina",
   "Festival Estéreo Picnic",
-  "Tigo",
-  "Medellín Music Week",
+  "Avianca",
+  "Alpina",
 ];
 
 export const testimonials = [
   {
     quote:
-      "La capacidad técnica y creativa de Emmplay es de otro nivel. Ejecutaron nuestra gira de 12 ciudades con una precisión que no habíamos visto antes.",
-    author: "Rodrigo Vásquez",
-    role: "Tour Manager — Gira Latinoamérica 2024",
+      "Emmplay transformó por completo la experiencia técnica de nuestro evento. Audio, iluminación y pantallas en perfecta sincronía. Un equipo de otro nivel.",
+    author: "Dirección de Comunicaciones",
+    role: "Presidencia de la República de Colombia",
   },
   {
     quote:
       "Transformaron un espacio vacío en una experiencia que 40,000 personas no van a olvidar. Eso es lo que hace Emmplay.",
     author: "Carolina Mejía",
-    role: "Directora de Eventos, Bancolombia",
+    role: "Directora de Eventos — Bancolombia",
   },
   {
     quote:
-      "Desde el diseño del escenario hasta el último frame del broadcast, todo fue impecable. Son el estándar de la industria en Colombia.",
+      "Desde el primer ensayo de sonido hasta el último frame del broadcast, todo fue impecable. Son el estándar de la industria.",
     author: "Felipe Arango",
-    role: "Productor Ejecutivo, Festival Estéreo Picnic",
-  },
-];
-
-export const portfolioItems = [
-  {
-    id: 1,
-    title: "Estéreo Picnic 2024",
-    client: "Festival Estéreo Picnic",
-    category: "Festival Production",
-    year: "2024",
-    size: "large", // span 2 cols
-  },
-  {
-    id: 2,
-    title: "Gira Nacional",
-    client: "Artista Internacional",
-    category: "Touring",
-    year: "2024",
-    size: "small",
-  },
-  {
-    id: 3,
-    title: "Lanzamiento Global",
-    client: "Bancolombia",
-    category: "Brand Experience",
-    year: "2024",
-    size: "small",
-  },
-  {
-    id: 4,
-    title: "Rock al Parque",
-    client: "IDARTES",
-    category: "Live Production",
-    year: "2023",
-    size: "small",
-  },
-  {
-    id: 5,
-    title: "Broadcast en Vivo",
-    client: "Claro",
-    category: "Broadcast",
-    year: "2024",
-    size: "large",
-  },
-  {
-    id: 6,
-    title: "Medellín Music Week",
-    client: "Alcaldía de Medellín",
-    category: "Event Design",
-    year: "2023",
-    size: "small",
+    role: "Productor Ejecutivo — Festival Estéreo Picnic",
   },
 ];
 
 export const stats = [
   { value: "500+", label: "Eventos producidos" },
-  { value: "12", label: "Países de operación" },
+  { value: "10+", label: "Años de experiencia" },
   { value: "2M+", label: "Asistentes impactados" },
-  { value: "10", label: "Años de trayectoria" },
+  { value: "12", label: "Países de operación" },
 ];

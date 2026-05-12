@@ -28,26 +28,35 @@ export default function Contact() {
             viewport={{ once: true, margin: "-80px" }}
             variants={stagger}
           >
-            <motion.span variants={fadeUp} className="text-[10px] sm:text-[11px] font-medium tracking-[0.35em] uppercase text-[var(--accent)] mb-8 sm:mb-12 block">
+            <motion.span variants={fadeUp} className="text-[10px] sm:text-[11px] font-medium tracking-[0.38em] uppercase text-[var(--accent)] mb-8 sm:mb-12 block">
               Contacto
             </motion.span>
 
-            <motion.h2 variants={fadeUp} className="font-display text-[clamp(52px,8vw,120px)] leading-[0.86] text-white tracking-[0.01em] mb-12 sm:mb-16 lg:mb-20">
-              HABLEMOS
+            <motion.h2 variants={fadeUp} className="font-display text-[clamp(52px,8vw,120px)] leading-[0.86] text-white tracking-[0.01em] mb-10 sm:mb-14 lg:mb-16">
+              COTIZA
               <br />
-              <span className="text-white/15">DE TU</span>
+              <span className="text-white/15">TU</span>
               <br />
-              PROYECTO.
+              EVENTO.
             </motion.h2>
 
-            <motion.div variants={fadeUp} className="flex flex-col gap-7 sm:gap-10">
+            <motion.p variants={fadeUp} className="text-[13px] sm:text-[14px] text-white/30 font-light leading-relaxed max-w-[300px] mb-10 sm:mb-14">
+              Audio, iluminación, LED, broadcast o estructuras —
+              cuéntanos qué necesitas y te enviamos una propuesta.
+            </motion.p>
+
+            <motion.div variants={fadeUp} className="flex flex-col gap-6 sm:gap-8">
               <div>
                 <p className="text-[10px] tracking-[0.28em] uppercase text-white/20 mb-2">Email</p>
-                <p className="text-[14px] sm:text-[16px] text-white/50 font-light">hola@emmplay.com</p>
+                <p className="text-[14px] sm:text-[15px] text-white/50 font-light">hola@emmplay.com</p>
               </div>
               <div>
                 <p className="text-[10px] tracking-[0.28em] uppercase text-white/20 mb-2">Ubicación</p>
-                <p className="text-[14px] sm:text-[16px] text-white/50 font-light">Medellín, Colombia</p>
+                <p className="text-[14px] sm:text-[15px] text-white/50 font-light">Medellín, Colombia</p>
+              </div>
+              <div>
+                <p className="text-[10px] tracking-[0.28em] uppercase text-white/20 mb-2">Cobertura</p>
+                <p className="text-[14px] sm:text-[15px] text-white/50 font-light">Colombia · Latinoamérica</p>
               </div>
             </motion.div>
           </motion.div>
@@ -69,30 +78,30 @@ export default function Contact() {
               >
                 <div className="w-12 h-px bg-[var(--accent)]" />
                 <h3 className="font-display text-[clamp(36px,5vw,56px)] text-white tracking-[0.02em] leading-tight">
-                  MENSAJE<br />RECIBIDO.
+                  SOLICITUD<br />RECIBIDA.
                 </h3>
-                <p className="text-[14px] sm:text-[15px] text-white/30 font-light leading-relaxed max-w-xs">
-                  Nuestro equipo te contactará en menos de 24 horas.
+                <p className="text-[13px] sm:text-[14px] text-white/30 font-light leading-relaxed max-w-xs">
+                  Te enviamos una propuesta en menos de 24 horas.
                 </p>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-8 sm:gap-10 lg:gap-12">
-                <div className="grid sm:grid-cols-2 gap-8 sm:gap-10 lg:gap-12">
+              <form onSubmit={handleSubmit} className="flex flex-col gap-8 sm:gap-10 lg:gap-11">
+                <div className="grid sm:grid-cols-2 gap-8 sm:gap-10">
                   <input required type="text" placeholder="Nombre" className={inputClass} />
                   <input required type="email" placeholder="Email" className={inputClass} />
                 </div>
-                <input type="text" placeholder="Empresa" className={inputClass} />
+                <input type="text" placeholder="Empresa / Organización" className={inputClass} />
                 <textarea
                   required
                   rows={4}
-                  placeholder="Cuéntanos sobre tu proyecto..."
+                  placeholder="Tipo de evento, fecha aproximada y servicios que necesitas..."
                   className={`${inputClass} resize-none`}
                 />
                 <button
                   type="submit"
-                  className="group self-start inline-flex items-center gap-4 sm:gap-6 text-[11px] font-medium tracking-[0.28em] uppercase text-white hover:text-[var(--accent)] transition-colors duration-300 mt-2"
+                  className="group self-start inline-flex items-center gap-4 sm:gap-5 text-[11px] font-medium tracking-[0.28em] uppercase text-white hover:text-[var(--accent)] transition-colors duration-300 mt-2"
                 >
-                  Enviar mensaje
+                  Solicitar propuesta
                   <span className="block w-10 h-px bg-current group-hover:w-16 transition-all duration-500" />
                   <ArrowRight size={11} />
                 </button>
