@@ -60,7 +60,7 @@ export const services = [
     tag: "Production",
     description:
       "Diseño, fabricación y montaje de estructuras escénicas custom. Tarimas, torres, techos y arquitectura efímera para cualquier formato.",
-    image: "https://images.unsplash.com/photo-1598387993441-a364f854cfbd?w=1600&q=90&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1600&q=90&auto=format&fit=crop",
   },
 ];
 
