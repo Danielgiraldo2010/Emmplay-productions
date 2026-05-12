@@ -49,12 +49,12 @@ export default function Portfolio() {
         >
           <div>
             <motion.span variants={fadeUp} className="text-[10px] sm:text-[11px] font-medium tracking-[0.38em] uppercase text-[var(--accent)] mb-6 sm:mb-8 block">
-              Proyectos
+              Eventos
             </motion.span>
             <motion.h2 variants={fadeUp} className="font-display text-[clamp(44px,6vw,88px)] leading-[0.9] text-white tracking-[0.01em]">
-              TRABAJO
+              EVENTOS
               <br />
-              <span className="text-white/20">SELECCIONADO.</span>
+              <span className="text-white/20">DESTACADOS.</span>
             </motion.h2>
           </div>
           <motion.p variants={fadeUp} className="text-[10px] sm:text-[11px] font-medium tracking-[0.25em] uppercase text-white/18 sm:pb-1">

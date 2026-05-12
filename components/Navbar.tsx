@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { navLinks } from "@/data/site";
 
 export default function Navbar() {
@@ -33,14 +34,18 @@ export default function Navbar() {
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 md:px-14 h-[72px] flex items-center justify-between">
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 md:px-14 h-[80px] sm:h-[88px] flex items-center justify-between">
 
           {/* Logo */}
-          <Link
-            href="/"
-            className="font-display text-[22px] sm:text-[24px] text-white tracking-[0.14em] hover:text-[var(--accent)] transition-colors duration-500 group"
-          >
-            EMMP<span className="text-[var(--accent)] group-hover:text-white transition-colors duration-500">LAY</span>
+          <Link href="/" className="flex items-center opacity-90 hover:opacity-100 transition-opacity duration-300">
+            <Image
+              src="/logoemmplay.avif"
+              alt="Emmplay"
+              width={140}
+              height={40}
+              className="h-16 sm:h-20 md:h-24 w-auto object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop nav */}
@@ -61,7 +66,7 @@ export default function Navbar() {
             href="#contact"
             className="hidden md:inline-flex text-[11px] font-medium tracking-[0.2em] uppercase text-white/30 hover:text-[var(--accent)] transition-colors duration-400"
           >
-            Iniciar proyecto
+            Cotiza tu evento
           </Link>
 
           {/* Mobile toggle */}
@@ -129,7 +134,7 @@ export default function Navbar() {
                 onClick={() => setOpen(false)}
                 className="text-[11px] font-medium tracking-[0.3em] uppercase text-[var(--accent)] mb-4"
               >
-                Iniciar proyecto →
+                Cotiza tu evento →
               </Link>
               <p className="text-[11px] tracking-[0.2em] uppercase text-white/20">
                 hola@emmplay.com

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { navLinks, siteConfig } from "@/data/site";
 
 const SocialLinks = [
@@ -43,14 +44,17 @@ export default function Footer() {
 
         {/* Top — logo + tagline */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 sm:gap-10 mb-12 sm:mb-16 lg:mb-20">
-          <Link
-            href="/"
-            className="font-display text-[clamp(40px,7vw,96px)] leading-none text-[var(--fg)] tracking-[0.02em] hover:text-[var(--accent)] transition-colors duration-500 group"
-          >
-            EMMP<span className="text-[var(--accent)] group-hover:text-[var(--fg)] transition-colors duration-500">LAY</span>
+          <Link href="/" className="opacity-80 hover:opacity-100 transition-opacity duration-300">
+            <Image
+              src="/logoemmplay.avif"
+              alt="Emmplay"
+              width={200}
+              height={56}
+              className="h-14 sm:h-16 w-auto object-contain"
+            />
           </Link>
           <p className="text-[13px] sm:text-sm text-[var(--fg-muted)] font-light max-w-xs leading-relaxed">
-            Live Production. Global Scale.
+            Sonido. Luz. Experiencia.
             <br />
             Medellín, Colombia — Latinoamérica.
           </p>
@@ -74,7 +78,7 @@ export default function Footer() {
           <div>
             <p className="text-[10px] tracking-[0.25em] uppercase text-[var(--fg-muted)] mb-5 sm:mb-6">Servicios</p>
             <ul className="flex flex-col gap-2.5 sm:gap-3">
-              {["Live Events", "Touring", "Stage Design", "Broadcast", "Brand Experiences", "Content"].map((s) => (
+              {["Audio Profesional", "Iluminación", "Pantallas LED", "Broadcast", "Estructuras"].map((s) => (
                 <li key={s}>
                   <span className="text-[13px] sm:text-sm text-[var(--fg-dim)] font-light">{s}</span>
                 </li>
