@@ -8,71 +8,68 @@ export default function About() {
   return (
     <section id="about" className="relative min-h-screen flex items-center bg-[var(--bg)] overflow-hidden">
 
-      {/* Image — full bg on mobile, right half on desktop */}
+      {/* Image — full bg mobile, right 50% desktop */}
       <motion.div
-        initial={{ opacity: 0, scale: 1.04 }}
-        whileInView={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
-        className="absolute inset-0 lg:left-auto lg:right-0 lg:top-0 lg:bottom-0 lg:w-[52%] overflow-hidden"
+        transition={{ duration: 2.0, ease: "easeOut" }}
+        className="absolute inset-0 lg:left-[48%] overflow-hidden"
       >
         <Image
-          src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1200&q=85&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1400&q=90&auto=format&fit=crop"
           alt="Live event production"
           fill
           className="object-cover object-center"
           sizes="(max-width: 1024px) 100vw, 52vw"
         />
-        {/* Mobile: heavy overlay so text is readable */}
-        <div className="absolute inset-0 bg-[var(--bg)]/80 lg:bg-transparent" />
-        {/* Desktop: gradient from left */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[var(--bg)] via-[var(--bg)]/50 to-transparent hidden lg:block" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)]/70 via-transparent to-[var(--bg)]/20" />
+        {/* Mobile: strong overlay */}
+        <div className="absolute inset-0 bg-[var(--bg)]/85 lg:hidden" />
+        {/* Desktop: left-to-right fade */}
+        <div className="absolute inset-0 hidden lg:block bg-gradient-to-r from-[var(--bg)] via-[var(--bg)]/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)]/60 via-transparent to-transparent" />
       </motion.div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-[1440px] mx-auto w-full px-6 sm:px-8 md:px-16 py-28 sm:py-36 lg:py-40">
+      <div className="relative z-10 max-w-[1440px] mx-auto w-full px-6 sm:px-10 md:px-16 py-28 sm:py-36 lg:py-44">
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: true, margin: "-100px" }}
           variants={stagger}
-          className="max-w-lg"
+          className="max-w-[520px]"
         >
-          <motion.span variants={fadeUp} className="text-[10px] sm:text-[11px] font-medium tracking-[0.35em] uppercase text-[var(--accent)] mb-8 sm:mb-12 block">
+          <motion.span variants={fadeUp} className="text-[10px] sm:text-[11px] font-medium tracking-[0.38em] uppercase text-[var(--accent)] mb-10 sm:mb-14 block">
             Sobre Emmplay
           </motion.span>
 
-          <motion.h2 variants={fadeUp} className="font-display text-[clamp(48px,7vw,100px)] leading-[0.88] text-white tracking-[0.01em] mb-10 sm:mb-14">
-            UNA DÉCADA
-            <br />
-            <span className="text-white/20">EN LOS</span>
-            <br />
+          {/* 2 lines only — no compite con Hero */}
+          <motion.h2 variants={fadeUp} className="font-display text-[clamp(44px,6.5vw,88px)] leading-[0.9] text-white tracking-[0.01em] mb-10 sm:mb-14">
             GRANDES
             <br />
-            <span className="text-white/20">ESCENARIOS.</span>
+            <span className="text-white/22">ESCENARIOS.</span>
           </motion.h2>
 
-          <motion.p variants={fadeUp} className="text-[14px] sm:text-[16px] text-white/45 leading-[1.85] font-light max-w-sm mb-14 sm:mb-20">
-            Producimos eventos de gran escala, giras internacionales y contenido
-            audiovisual para las marcas y artistas más exigentes de Latinoamérica.
+          <motion.p variants={fadeUp} className="text-[13px] sm:text-[15px] text-white/40 leading-[1.9] font-light max-w-[340px] mb-16 sm:mb-24">
+            Más de una década produciendo eventos masivos, giras internacionales
+            y contenido audiovisual para las marcas más exigentes de Latinoamérica.
           </motion.p>
 
-          {/* Stats */}
-          <motion.div variants={stagger} className="flex items-end gap-10 sm:gap-16">
+          {/* Stats — 2, bien espaciados */}
+          <motion.div variants={stagger} className="flex items-end gap-12 sm:gap-20">
             <motion.div variants={fadeUp}>
-              <span className="font-display text-[clamp(52px,7vw,96px)] text-[var(--accent)] leading-none tracking-[0.01em] block">
+              <span className="font-display text-[clamp(56px,7vw,88px)] text-[var(--accent)] leading-none block">
                 500+
               </span>
-              <span className="text-[10px] sm:text-[11px] font-medium tracking-[0.22em] uppercase text-white/25 mt-2 block">
+              <span className="text-[10px] font-medium tracking-[0.25em] uppercase text-white/22 mt-3 block">
                 Eventos producidos
               </span>
             </motion.div>
             <motion.div variants={fadeUp}>
-              <span className="font-display text-[clamp(52px,7vw,96px)] text-white/15 leading-none tracking-[0.01em] block">
+              <span className="font-display text-[clamp(56px,7vw,88px)] text-[var(--fg-ghost)] leading-none block">
                 12
               </span>
-              <span className="text-[10px] sm:text-[11px] font-medium tracking-[0.22em] uppercase text-white/25 mt-2 block">
+              <span className="text-[10px] font-medium tracking-[0.25em] uppercase text-white/22 mt-3 block">
                 Países
               </span>
             </motion.div>

@@ -1,33 +1,30 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap");
 @import "tailwindcss";
 
 :root {
-  --bg: #050505;
-  --surface: #0c0c0c;
-  --surface-2: #111111;
-  --fg: #ffffff;
-  --fg-dim: rgba(255, 255, 255, 0.5);
-  --fg-muted: rgba(255, 255, 255, 0.22);
-  --line: rgba(255, 255, 255, 0.07);
-  --line-bright: rgba(255, 255, 255, 0.12);
+  --bg:       #040404;
+  --surface:  #0a0a0a;
+  --surface-2:#101010;
+  --fg:       #f5f5f5;
+  --fg-dim:   rgba(245, 245, 245, 0.48);
+  --fg-muted: rgba(245, 245, 245, 0.22);
+  --fg-ghost: rgba(245, 245, 245, 0.10);
+  --line:     rgba(245, 245, 245, 0.06);
+  --line-mid: rgba(245, 245, 245, 0.10);
 
-  /* Brand cyan — extraído del logo EMMPLAY */
-  --accent: #00aeef;
-  --accent-dark: #0077a6;
-  --accent-glow: rgba(0, 174, 239, 0.12);
-  --accent-glow-strong: rgba(0, 174, 239, 0.22);
+  --accent:       #00aeef;
+  --accent-dark:  #0077a6;
+  --accent-glow:  rgba(0, 174, 239, 0.10);
 }
 
 @theme inline {
   --color-background: var(--bg);
-  --color-foreground: var(--fg);
-  --font-sans: "Inter", system-ui, sans-serif;
+  --color-foreground:  var(--fg);
+  --font-sans:    "Inter", system-ui, sans-serif;
   --font-display: "Bebas Neue", sans-serif;
 }
 
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -37,6 +34,7 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
@@ -50,31 +48,22 @@ body {
 
 ::selection {
   background: var(--accent);
-  color: #050505;
+  color: #040404;
 }
 
-::-webkit-scrollbar {
-  width: 3px;
-}
-::-webkit-scrollbar-track {
-  background: var(--bg);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--accent-dark);
-}
+::-webkit-scrollbar        { width: 2px; }
+::-webkit-scrollbar-track  { background: var(--bg); }
+::-webkit-scrollbar-thumb  { background: rgba(0,174,239,0.3); border-radius: 1px; }
 
 .font-display {
   font-family: "Bebas Neue", sans-serif;
   letter-spacing: 0.02em;
 }
 
-.line-sep {
-  width: 100%;
-  height: 1px;
-  background: var(--line);
+/* Utility: very subtle cyan glow on hover */
+.hover-glow {
+  transition: box-shadow 0.6s ease;
 }
-
-/* Cyan glow utility — usado en hover de cards y elementos interactivos */
-.glow-cyan {
-  box-shadow: 0 0 40px var(--accent-glow), 0 0 80px rgba(0, 174, 239, 0.06);
+.hover-glow:hover {
+  box-shadow: 0 0 60px rgba(0, 174, 239, 0.07);
 }
