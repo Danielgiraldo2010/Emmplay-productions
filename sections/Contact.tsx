@@ -47,12 +47,22 @@ export default function Contact() {
 
             <motion.div variants={fadeUp} className="flex flex-col gap-6 sm:gap-8">
               <div>
+                <p className="text-[10px] tracking-[0.28em] uppercase text-white/20 mb-2">WhatsApp</p>
+                <a
+                  href="https://api.whatsapp.com/send/?phone=3117883549&text&type=phone_number&app_absent=0"
+                  target="_blank"
+                  className="text-[14px] sm:text-[15px] text-white/50 font-light hover:text-[var(--accent)] transition-colors duration-300"
+                >
+                  +57 311 788 3549
+                </a>
+              </div>
+              <div>
                 <p className="text-[10px] tracking-[0.28em] uppercase text-white/20 mb-2">Email</p>
                 <p className="text-[14px] sm:text-[15px] text-white/50 font-light">hola@emmplay.com</p>
               </div>
               <div>
                 <p className="text-[10px] tracking-[0.28em] uppercase text-white/20 mb-2">Ubicación</p>
-                <p className="text-[14px] sm:text-[15px] text-white/50 font-light">Medellín, Colombia</p>
+                <p className="text-[14px] sm:text-[15px] text-white/50 font-light">Manizales, Caldas — Colombia</p>
               </div>
               <div>
                 <p className="text-[10px] tracking-[0.28em] uppercase text-white/20 mb-2">Cobertura</p>

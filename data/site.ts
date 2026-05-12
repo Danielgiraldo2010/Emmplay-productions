@@ -7,8 +7,9 @@ export const siteConfig = {
   ogImage: "/og-image.jpg",
   links: {
     instagram: "https://instagram.com/emmplay",
-    linkedin: "https://linkedin.com/company/emmplay",
-    youtube: "https://youtube.com/@emmplay",
+    whatsapp: "https://api.whatsapp.com/send/?phone=3117883549&text&type=phone_number&app_absent=0",
+    facebook: "https://www.facebook.com/EmmplayProducciones",
+    x: "https://x.com/emmplayp",
   },
 };
 

@@ -15,23 +15,29 @@ const SocialLinks = [
     ),
   },
   {
-    label: "LinkedIn",
-    href: siteConfig.links.linkedin,
+    label: "Facebook",
+    href: siteConfig.links.facebook,
     icon: (
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
-        <rect x="2" y="9" width="4" height="12" />
-        <circle cx="4" cy="4" r="2" />
+        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
       </svg>
     ),
   },
   {
-    label: "YouTube",
-    href: siteConfig.links.youtube,
+    label: "X / Twitter",
+    href: siteConfig.links.x,
+    icon: (
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+      </svg>
+    ),
+  },
+  {
+    label: "WhatsApp",
+    href: siteConfig.links.whatsapp,
     icon: (
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
-        <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none" />
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
       </svg>
     ),
   },
@@ -56,12 +62,12 @@ export default function Footer() {
           <p className="text-[13px] sm:text-sm text-[var(--fg-muted)] font-light max-w-xs leading-relaxed">
             Sonido. Luz. Experiencia.
             <br />
-            Medellín, Colombia — Latinoamérica.
+            Manizales, Caldas — Colombia.
           </p>
         </div>
 
-        {/* Middle — 2 cols on mobile, 4 on desktop */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 pb-12 sm:pb-16 border-b border-[var(--line)]">
+        {/* Middle */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 pb-12 sm:pb-16 border-b border-[var(--line)]">
           <div>
             <p className="text-[10px] tracking-[0.25em] uppercase text-[var(--fg-muted)] mb-5 sm:mb-6">Navegación</p>
             <ul className="flex flex-col gap-2.5 sm:gap-3">
@@ -89,8 +95,13 @@ export default function Footer() {
           <div>
             <p className="text-[10px] tracking-[0.25em] uppercase text-[var(--fg-muted)] mb-5 sm:mb-6">Contacto</p>
             <ul className="flex flex-col gap-2.5 sm:gap-3">
+              <li>
+                <a href="https://api.whatsapp.com/send/?phone=3117883549&text&type=phone_number&app_absent=0" target="_blank" className="text-[13px] sm:text-sm text-[var(--fg-dim)] hover:text-[var(--accent)] transition-colors duration-300 font-light">
+                  +57 311 788 3549
+                </a>
+              </li>
               <li className="text-[13px] sm:text-sm text-[var(--fg-dim)] font-light">hola@emmplay.com</li>
-              <li className="text-[13px] sm:text-sm text-[var(--fg-dim)] font-light">Medellín, Colombia</li>
+              <li className="text-[13px] sm:text-sm text-[var(--fg-dim)] font-light">Manizales, Caldas</li>
             </ul>
           </div>
 
@@ -117,10 +128,10 @@ export default function Footer() {
         {/* Bottom */}
         <div className="pt-6 sm:pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
           <p className="text-[11px] tracking-[0.1em] text-[var(--fg-muted)]">
-            © {new Date().getFullYear()} Emmplay. Todos los derechos reservados.
+            © {new Date().getFullYear()} Emmplay Producciones S.A.S. Todos los derechos reservados.
           </p>
           <p className="text-[11px] tracking-[0.1em] text-[var(--fg-muted)] opacity-50">
-            Producción de clase mundial desde Colombia.
+            Manizales, Caldas — Colombia.
           </p>
         </div>
       </div>
