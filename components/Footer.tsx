@@ -38,28 +38,32 @@ const SocialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[var(--bg)] border-t border-[var(--line)] px-8 md:px-12 pt-20 pb-10">
+    <footer className="bg-[var(--bg)] border-t border-[var(--line)] px-6 sm:px-8 md:px-12 pt-14 sm:pt-20 pb-8 sm:pb-10">
       <div className="max-w-[1440px] mx-auto">
+
         {/* Top — logo + tagline */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 mb-20">
-          <Link href="/" className="font-display text-[clamp(48px,7vw,96px)] leading-none text-[var(--fg)] tracking-[0.02em] hover:text-[var(--accent)] transition-colors duration-500 group">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 sm:gap-10 mb-12 sm:mb-16 lg:mb-20">
+          <Link
+            href="/"
+            className="font-display text-[clamp(40px,7vw,96px)] leading-none text-[var(--fg)] tracking-[0.02em] hover:text-[var(--accent)] transition-colors duration-500 group"
+          >
             EMMP<span className="text-[var(--accent)] group-hover:text-[var(--fg)] transition-colors duration-500">LAY</span>
           </Link>
-          <p className="text-sm text-[var(--fg-muted)] font-light max-w-xs leading-relaxed">
+          <p className="text-[13px] sm:text-sm text-[var(--fg-muted)] font-light max-w-xs leading-relaxed">
             Live Production. Global Scale.
             <br />
             Medellín, Colombia — Latinoamérica.
           </p>
         </div>
 
-        {/* Middle — nav + social */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-16 border-b border-[var(--line)]">
+        {/* Middle — 2 cols on mobile, 4 on desktop */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 pb-12 sm:pb-16 border-b border-[var(--line)]">
           <div>
-            <p className="text-[10px] tracking-[0.25em] uppercase text-[var(--fg-muted)] mb-6">Navegación</p>
-            <ul className="flex flex-col gap-3">
+            <p className="text-[10px] tracking-[0.25em] uppercase text-[var(--fg-muted)] mb-5 sm:mb-6">Navegación</p>
+            <ul className="flex flex-col gap-2.5 sm:gap-3">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-[var(--fg-dim)] hover:text-[var(--fg)] transition-colors duration-300 font-light">
+                  <Link href={link.href} className="text-[13px] sm:text-sm text-[var(--fg-dim)] hover:text-[var(--accent)] transition-colors duration-300 font-light">
                     {link.label}
                   </Link>
                 </li>
@@ -68,34 +72,34 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="text-[10px] tracking-[0.25em] uppercase text-[var(--fg-muted)] mb-6">Servicios</p>
-            <ul className="flex flex-col gap-3">
+            <p className="text-[10px] tracking-[0.25em] uppercase text-[var(--fg-muted)] mb-5 sm:mb-6">Servicios</p>
+            <ul className="flex flex-col gap-2.5 sm:gap-3">
               {["Live Events", "Touring", "Stage Design", "Broadcast", "Brand Experiences", "Content"].map((s) => (
                 <li key={s}>
-                  <span className="text-sm text-[var(--fg-dim)] font-light">{s}</span>
+                  <span className="text-[13px] sm:text-sm text-[var(--fg-dim)] font-light">{s}</span>
                 </li>
               ))}
             </ul>
           </div>
 
           <div>
-            <p className="text-[10px] tracking-[0.25em] uppercase text-[var(--fg-muted)] mb-6">Contacto</p>
-            <ul className="flex flex-col gap-3">
-              <li className="text-sm text-[var(--fg-dim)] font-light">hola@emmplay.com</li>
-              <li className="text-sm text-[var(--fg-dim)] font-light">Medellín, Colombia</li>
+            <p className="text-[10px] tracking-[0.25em] uppercase text-[var(--fg-muted)] mb-5 sm:mb-6">Contacto</p>
+            <ul className="flex flex-col gap-2.5 sm:gap-3">
+              <li className="text-[13px] sm:text-sm text-[var(--fg-dim)] font-light">hola@emmplay.com</li>
+              <li className="text-[13px] sm:text-sm text-[var(--fg-dim)] font-light">Medellín, Colombia</li>
             </ul>
           </div>
 
           <div>
-            <p className="text-[10px] tracking-[0.25em] uppercase text-[var(--fg-muted)] mb-6">Redes</p>
-            <ul className="flex flex-col gap-4">
+            <p className="text-[10px] tracking-[0.25em] uppercase text-[var(--fg-muted)] mb-5 sm:mb-6">Redes</p>
+            <ul className="flex flex-col gap-3 sm:gap-4">
               {SocialLinks.map((s) => (
                 <li key={s.label}>
                   <Link
                     href={s.href}
                     target="_blank"
                     aria-label={s.label}
-                    className="inline-flex items-center gap-3 text-sm text-[var(--fg-dim)] hover:text-[var(--accent)] transition-colors duration-300 font-light"
+                    className="inline-flex items-center gap-3 text-[13px] sm:text-sm text-[var(--fg-dim)] hover:text-[var(--accent)] transition-colors duration-300 font-light"
                   >
                     {s.icon}
                     {s.label}
@@ -107,7 +111,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className="pt-6 sm:pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
           <p className="text-[11px] tracking-[0.1em] text-[var(--fg-muted)]">
             © {new Date().getFullYear()} Emmplay. Todos los derechos reservados.
           </p>

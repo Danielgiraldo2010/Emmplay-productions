@@ -8,13 +8,13 @@ export default function About() {
   return (
     <section id="about" className="relative min-h-screen flex items-center bg-[var(--bg)] overflow-hidden">
 
-      {/* Image — right half, fullheight */}
+      {/* Image — full bg on mobile, right half on desktop */}
       <motion.div
         initial={{ opacity: 0, scale: 1.04 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
-        className="absolute right-0 top-0 bottom-0 w-full lg:w-[52%] overflow-hidden"
+        className="absolute inset-0 lg:left-auto lg:right-0 lg:top-0 lg:bottom-0 lg:w-[52%] overflow-hidden"
       >
         <Image
           src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1200&q=85&auto=format&fit=crop"
@@ -23,24 +23,27 @@ export default function About() {
           className="object-cover object-center"
           sizes="(max-width: 1024px) 100vw, 52vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[var(--bg)] via-[var(--bg)]/60 to-transparent lg:via-[var(--bg)]/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)]/80 via-transparent to-[var(--bg)]/30" />
+        {/* Mobile: heavy overlay so text is readable */}
+        <div className="absolute inset-0 bg-[var(--bg)]/80 lg:bg-transparent" />
+        {/* Desktop: gradient from left */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[var(--bg)] via-[var(--bg)]/50 to-transparent hidden lg:block" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)]/70 via-transparent to-[var(--bg)]/20" />
       </motion.div>
 
-      {/* Content — left */}
-      <div className="relative z-10 max-w-[1440px] mx-auto w-full px-8 md:px-16 py-40">
+      {/* Content */}
+      <div className="relative z-10 max-w-[1440px] mx-auto w-full px-6 sm:px-8 md:px-16 py-28 sm:py-36 lg:py-40">
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-80px" }}
           variants={stagger}
-          className="max-w-xl"
+          className="max-w-lg"
         >
-          <motion.span variants={fadeUp} className="text-[11px] font-medium tracking-[0.35em] uppercase text-[var(--accent)] mb-12 block">
+          <motion.span variants={fadeUp} className="text-[10px] sm:text-[11px] font-medium tracking-[0.35em] uppercase text-[var(--accent)] mb-8 sm:mb-12 block">
             Sobre Emmplay
           </motion.span>
 
-          <motion.h2 variants={fadeUp} className="font-display text-[clamp(56px,7vw,100px)] leading-[0.88] text-white tracking-[0.01em] mb-14">
+          <motion.h2 variants={fadeUp} className="font-display text-[clamp(48px,7vw,100px)] leading-[0.88] text-white tracking-[0.01em] mb-10 sm:mb-14">
             UNA DÉCADA
             <br />
             <span className="text-white/20">EN LOS</span>
@@ -50,26 +53,26 @@ export default function About() {
             <span className="text-white/20">ESCENARIOS.</span>
           </motion.h2>
 
-          <motion.p variants={fadeUp} className="text-[16px] text-white/45 leading-[1.85] font-light max-w-sm mb-20">
+          <motion.p variants={fadeUp} className="text-[14px] sm:text-[16px] text-white/45 leading-[1.85] font-light max-w-sm mb-14 sm:mb-20">
             Producimos eventos de gran escala, giras internacionales y contenido
             audiovisual para las marcas y artistas más exigentes de Latinoamérica.
           </motion.p>
 
-          {/* 2 stats — impacto máximo, mínima densidad */}
-          <motion.div variants={stagger} className="flex items-end gap-16">
+          {/* Stats */}
+          <motion.div variants={stagger} className="flex items-end gap-10 sm:gap-16">
             <motion.div variants={fadeUp}>
-              <span className="font-display text-[clamp(64px,7vw,96px)] text-[var(--accent)] leading-none tracking-[0.01em] block">
+              <span className="font-display text-[clamp(52px,7vw,96px)] text-[var(--accent)] leading-none tracking-[0.01em] block">
                 500+
               </span>
-              <span className="text-[11px] font-medium tracking-[0.22em] uppercase text-white/25 mt-2 block">
+              <span className="text-[10px] sm:text-[11px] font-medium tracking-[0.22em] uppercase text-white/25 mt-2 block">
                 Eventos producidos
               </span>
             </motion.div>
             <motion.div variants={fadeUp}>
-              <span className="font-display text-[clamp(64px,7vw,96px)] text-white/15 leading-none tracking-[0.01em] block">
+              <span className="font-display text-[clamp(52px,7vw,96px)] text-white/15 leading-none tracking-[0.01em] block">
                 12
               </span>
-              <span className="text-[11px] font-medium tracking-[0.22em] uppercase text-white/25 mt-2 block">
+              <span className="text-[10px] sm:text-[11px] font-medium tracking-[0.22em] uppercase text-white/25 mt-2 block">
                 Países
               </span>
             </motion.div>
