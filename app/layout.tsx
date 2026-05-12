@@ -42,6 +42,10 @@ export const metadata: Metadata = {
     description: "We build the moment.",
     images: ["/og-image.jpg"],
   },
+  icons: {
+    icon: "/logoemmplay.avif",
+    apple: "/logoemmplay.avif",
+  },
   robots: {
     index: true,
     follow: true,
