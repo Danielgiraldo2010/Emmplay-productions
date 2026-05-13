@@ -45,9 +45,7 @@ export default function Navbar() {
               height={0}
               sizes="300px"
               className="h-24 sm:h-28 md:h-32 w-auto object-contain"
-              loading="eager"
               priority
-              fetchPriority="high"
             />
           </Link>
 
