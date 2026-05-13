@@ -139,7 +139,7 @@ export default function Navbar() {
                 Cotiza tu evento →
               </Link>
               <p className="text-[11px] tracking-[0.2em] uppercase text-white/20">
-                hola@emmplay.com
+                info.emmplayproducciones@gmail.com 
               </p>
             </motion.div>
           </motion.div>
