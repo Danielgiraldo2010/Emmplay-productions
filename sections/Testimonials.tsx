@@ -7,7 +7,7 @@ import { testimonials } from "@/data/site";
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-48 px-8 sm:px-14 md:px-20 lg:px-28 bg-[var(--bg)]">
+    <section id="testimonials" className="py-48 px-6 sm:px-10 md:px-16 lg:px-24 bg-[var(--bg)]">
       <div className="max-w-[1440px] mx-auto">
 
         <motion.span

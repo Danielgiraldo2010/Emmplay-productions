@@ -29,7 +29,7 @@ export default function About() {
       </motion.div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-[1440px] mx-auto w-full px-8 sm:px-14 md:px-20 lg:px-28 py-28 sm:py-36 lg:py-44">
+      <div className="relative z-10 max-w-[1440px] mx-auto w-full px-6 sm:px-10 md:px-16 lg:px-24 py-28 sm:py-36 lg:py-44">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -43,7 +43,7 @@ export default function About() {
 
           <motion.h2 variants={fadeUp} className="font-display text-[clamp(44px,6.5vw,88px)] leading-[0.9] text-white tracking-[0.01em] mb-10 sm:mb-14">
             CADA EVENTO,
-            <br />
+            <br /> 
             <span className="text-white/22">UNA OBRA.</span>
           </motion.h2>
 

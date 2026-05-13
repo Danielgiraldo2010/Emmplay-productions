@@ -27,7 +27,7 @@ export default function Statement() {
           style={{ background: "radial-gradient(ellipse 70% 100% at 50% 0%, #00aeef, transparent 65%)" }}
         />
 
-        <div className="relative z-10 max-w-[1440px] mx-auto w-full px-8 sm:px-14 md:px-20 lg:px-28 pb-14 sm:pb-24 md:pb-32">
+        <div className="relative z-10 max-w-[1440px] mx-auto w-full px-6 sm:px-10 md:px-16 lg:px-24 pb-14 sm:pb-24 md:pb-32">
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -50,7 +50,7 @@ export default function Statement() {
 
       {/* Trusted by — clientes reales */}
       <div className="py-14 sm:py-20 bg-[var(--bg)] overflow-hidden">
-        <div className="max-w-[1440px] mx-auto px-8 sm:px-14 md:px-20 lg:px-28 mb-8 sm:mb-12">
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 md:px-16 lg:px-24 mb-8 sm:mb-12">
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}

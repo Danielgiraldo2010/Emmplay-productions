@@ -45,7 +45,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[var(--bg)] border-t border-[var(--line)] px-8 sm:px-14 md:px-20 lg:px-28 pt-12 sm:pt-16 pb-8 sm:pb-10">
+    <footer className="bg-[var(--bg)] border-t border-[var(--line)] px-6 sm:px-10 md:px-16 lg:px-24 pt-12 sm:pt-16 pb-8 sm:pb-10">
       <div className="max-w-[1440px] mx-auto">
 
         {/* Grid: 2 cols mobile, 4 cols desktop */}

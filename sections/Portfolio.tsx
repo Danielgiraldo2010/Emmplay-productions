@@ -36,7 +36,7 @@ export default function Portfolio() {
   const [hero, ...rest] = projects;
 
   return (
-    <section id="portfolio" className="py-28 sm:py-36 lg:py-48 px-8 sm:px-14 md:px-20 lg:px-28 bg-[var(--bg)]">
+    <section id="portfolio" className="py-28 sm:py-36 lg:py-48 px-6 sm:px-10 md:px-16 lg:px-24 bg-[var(--bg)]">
       <div className="max-w-[1440px] mx-auto">
 
         {/* Header */}
