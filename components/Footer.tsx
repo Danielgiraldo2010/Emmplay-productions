@@ -63,17 +63,17 @@ export default function Footer() {
                 className="h-20 sm:h-24 w-auto object-contain"
               />
             </Link>
-            <p className="text-[12px] sm:text-[13px] text-white/22 font-light leading-relaxed max-w-[240px]">
+            <p className="text-[14px] sm:text-[15px] text-white/35 font-light leading-relaxed max-w-[240px]">
               Producción técnica de eventos que dejan huella.
             </p>
-            <p className="text-[11px] text-white/14 font-light">
+            <p className="text-[13px] sm:text-[14px] text-white/25 font-light">
               Manizales, Caldas — Colombia
             </p>
           </div>
 
           {/* Navegación */}
           <div className="flex flex-col gap-3">
-            <p className="text-[10px] tracking-[0.25em] uppercase text-white/18 mb-1">Navegación</p>
+            <p className="text-[11px] tracking-[0.25em] uppercase text-white/30 mb-1">Navegación</p>
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -87,7 +87,7 @@ export default function Footer() {
 
           {/* Contacto */}
           <div className="flex flex-col gap-3">
-            <p className="text-[10px] tracking-[0.25em] uppercase text-white/18 mb-1">Contacto</p>
+            <p className="text-[11px] tracking-[0.25em] uppercase text-white/30 mb-1">Contacto</p>
             <a
               href="https://api.whatsapp.com/send/?phone=3117883549&text&type=phone_number&app_absent=0"
               target="_blank"
@@ -101,7 +101,7 @@ export default function Footer() {
 
           {/* Redes */}
           <div className="flex flex-col gap-3">
-            <p className="text-[10px] tracking-[0.25em] uppercase text-white/18 mb-1">Redes</p>
+            <p className="text-[11px] tracking-[0.25em] uppercase text-white/30 mb-1">Redes</p>
             {socials.map((s) => (
               <Link
                 key={s.label}
@@ -119,11 +119,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
-          <p className="text-[11px] text-white/16 font-light">
+        <div className="pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-end gap-6">
+          <p className="text-[14px] text-white/40 font-light">
             © {new Date().getFullYear()} Emmplay Producciones S.A.S.
           </p>
-          <p className="text-[11px] text-white/10 font-light">
+          <p className="text-[13px] text-white/20 font-light">
             Sonido. Luz. Experiencia.
           </p>
         </div>
