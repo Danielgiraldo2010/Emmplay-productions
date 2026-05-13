@@ -16,6 +16,8 @@ export default function Statement() {
           src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1920&q=90&auto=format&fit=crop"
           alt="Emmplay live event"
           fill
+          priority
+          loading="eager"
           className="object-cover object-center brightness-[0.5]"
           sizes="100vw"
         />
