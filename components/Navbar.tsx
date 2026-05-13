@@ -41,10 +41,12 @@ export default function Navbar() {
             <Image
               src="/logoemmplay.png"
               alt="Emmplay"
-              width={140}
-              height={40}
-              className="h-16 sm:h-20 md:h-24 w-auto object-contain" style={{ width: 'auto' }}
+              width={0}
+              height={0}
+              sizes="300px"
+              className="h-16 sm:h-20 md:h-24 w-auto object-contain"
               loading="eager"
+              priority
             />
           </Link>
 

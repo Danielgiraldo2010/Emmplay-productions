@@ -57,9 +57,10 @@ export default function Footer() {
               <Image
                 src="/logoemmplay.png"
                 alt="Emmplay"
-                width={160}
-                height={44}
-                className="h-10 sm:h-11 w-auto object-contain" style={{ width: 'auto' }}
+                width={0}
+                height={0}
+                sizes="300px"
+                className="h-10 sm:h-11 w-auto object-contain"
               />
             </Link>
             <p className="text-[12px] text-white/22 font-light leading-relaxed max-w-[220px]">
