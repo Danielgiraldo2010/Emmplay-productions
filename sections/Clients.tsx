@@ -9,7 +9,7 @@ export default function Clients() {
   return (
     <section id="clients" className="py-36 bg-[var(--surface)] overflow-hidden">
 
-      <div className="max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12 lg:px-20 mb-20">
+      <div className="max-w-[1440px] mx-auto px-8 sm:px-14 md:px-20 lg:px-28 mb-20">
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}

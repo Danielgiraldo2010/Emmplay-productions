@@ -44,7 +44,7 @@ export default function Contact() {
         {/* ══════════════════════════════════════
             LEFT COLUMN — 55% — Form
         ══════════════════════════════════════ */}
-        <div className="w-full lg:w-[55%] flex flex-col justify-center px-5 sm:px-8 md:px-12 lg:px-20 xl:px-24 py-20 sm:py-28 lg:py-16">
+        <div className="w-full lg:w-[55%] flex flex-col justify-center px-8 sm:px-14 md:px-20 lg:px-28 xl:px-24 py-20 sm:py-28 lg:py-16">
           <motion.div
             initial="hidden"
             whileInView="visible"
