@@ -3,50 +3,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import Link from "next/link";
+import Image from "next/image";
 import { fadeUp, stagger } from "@/lib/animations";
-import { siteConfig } from "@/data/site";
-
-const socials = [
-  {
-    label: "Instagram",
-    href: siteConfig.links.instagram,
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="2" width="20" height="20" rx="5" />
-        <circle cx="12" cy="12" r="4" />
-        <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
-      </svg>
-    ),
-  },
-  {
-    label: "Facebook",
-    href: siteConfig.links.facebook,
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-      </svg>
-    ),
-  },
-  {
-    label: "X",
-    href: siteConfig.links.x,
-    icon: (
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-      </svg>
-    ),
-  },
-  {
-    label: "WhatsApp",
-    href: siteConfig.links.whatsapp,
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-      </svg>
-    ),
-  },
-];
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
@@ -57,153 +15,206 @@ export default function Contact() {
   };
 
   const inputClass =
-    "w-full bg-transparent border-b border-white/15 focus:border-[var(--accent)] outline-none py-4 text-[14px] text-white placeholder:text-white/30 transition-colors duration-300 font-light";
+    "w-full bg-transparent border-0 border-b border-white/15 hover:border-white/30 focus:border-[var(--accent)] outline-none px-0 py-4 text-[15px] text-white placeholder:text-white/28 transition-all duration-400 font-light tracking-wide";
+
+  const labelClass =
+    "text-[10px] tracking-[0.28em] uppercase text-white/30 font-medium mb-2.5 block";
 
   return (
-    <section id="contact" className="relative py-24 sm:py-32 px-6 sm:px-10 bg-[var(--bg)] overflow-hidden">
+    <section id="contact" className="relative bg-[var(--bg)] overflow-hidden">
 
-      {/* Glow top-center */}
+      {/* Subtle grain */}
       <div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] opacity-[0.07] pointer-events-none"
-        style={{ background: "radial-gradient(ellipse 60% 80% at 50% 0%, #00aeef, transparent 70%)" }}
-      />
-      {/* Glow bottom */}
-      <div
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] opacity-[0.05] pointer-events-none"
-        style={{ background: "radial-gradient(ellipse 80% 100% at 50% 100%, #00aeef, transparent 70%)" }}
+        className="absolute inset-0 opacity-[0.02] pointer-events-none z-0"
+        style={{
+          backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+          backgroundSize: "256px 256px",
+        }}
       />
 
-      <div className="relative z-10 max-w-[720px] mx-auto">
+      {/* Ambient glow — left */}
+      <div
+        className="absolute top-1/2 -translate-y-1/2 left-0 w-[500px] h-[700px] opacity-[0.05] pointer-events-none z-0"
+        style={{ background: "radial-gradient(ellipse 80% 80% at 0% 50%, #00aeef, transparent 70%)" }}
+      />
 
-        {/* Header — centrado */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          variants={stagger}
-          className="text-center mb-14 sm:mb-16"
-        >
-          <motion.span variants={fadeUp} className="text-[10px] sm:text-[11px] font-medium tracking-[0.38em] uppercase text-[var(--accent)] mb-5 block">
-            Contacto
-          </motion.span>
-          <motion.h2 variants={fadeUp} className="font-display text-[clamp(48px,7vw,88px)] leading-[0.9] text-white tracking-[0.01em] mb-5">
-            COTIZA TU
-            <br />
-            <span className="text-white/20">EVENTO.</span>
-          </motion.h2>
-          <motion.p variants={fadeUp} className="text-[14px] text-white/35 font-light leading-relaxed max-w-sm mx-auto">
-            Cuéntanos qué necesitas y te enviamos una propuesta en menos de 24 horas.
-          </motion.p>
-        </motion.div>
+      {/* Two-column layout — fills viewport height */}
+      <div className="relative z-10 flex flex-col lg:flex-row min-h-screen">
 
-        {/* Form card */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-          className="relative bg-white/[0.03] border border-white/[0.08] p-8 sm:p-10 mb-10"
-        >
-          {/* Cyan corner accent */}
-          <div className="absolute top-0 left-0 w-12 h-px bg-[var(--accent)] opacity-60" />
-          <div className="absolute top-0 left-0 w-px h-12 bg-[var(--accent)] opacity-60" />
-          <div className="absolute bottom-0 right-0 w-12 h-px bg-[var(--accent)] opacity-20" />
-          <div className="absolute bottom-0 right-0 w-px h-12 bg-[var(--accent)] opacity-20" />
-
-          {sent ? (
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="flex flex-col items-center text-center gap-5 py-10"
+        {/* ══════════════════════════════════════
+            LEFT COLUMN — 55% — Form
+        ══════════════════════════════════════ */}
+        <div className="w-full lg:w-[55%] flex flex-col justify-center px-8 sm:px-12 md:px-20 xl:px-24 py-20 sm:py-28 lg:py-16">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-60px" }}
+            variants={stagger}
+            className="w-full"
+          >
+            {/* Label */}
+            <motion.span
+              variants={fadeUp}
+              className="text-[10px] sm:text-[11px] font-medium tracking-[0.45em] uppercase text-[var(--accent)] mb-8 sm:mb-10 block"
             >
-              <div className="w-10 h-px bg-[var(--accent)]" />
-              <h3 className="font-display text-[clamp(36px,5vw,52px)] text-white tracking-[0.02em] leading-tight">
-                SOLICITUD<br />RECIBIDA.
-              </h3>
-              <p className="text-[14px] text-white/30 font-light max-w-xs">
-                Te enviamos una propuesta en menos de 24 horas.
-              </p>
+              Contacto
+            </motion.span>
+
+            {/* Headline */}
+            <motion.div variants={fadeUp} className="mb-6 sm:mb-8">
+              <h2 className="font-display text-[clamp(54px,6.5vw,100px)] leading-[0.87] text-white tracking-[0.01em]">
+                COTIZA TU
+              </h2>
+              <h2 className="font-display text-[clamp(54px,6.5vw,100px)] leading-[0.87] text-white/14 tracking-[0.01em]">
+                EVENTO.
+              </h2>
             </motion.div>
-          ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-              <div className="grid sm:grid-cols-2 gap-6">
-                <div className="flex flex-col gap-1">
-                  <label className="text-[10px] tracking-[0.2em] uppercase text-white/25 font-medium">Nombre</label>
-                  <input required type="text" placeholder="Tu nombre" className={inputClass} />
-                </div>
-                <div className="flex flex-col gap-1">
-                  <label className="text-[10px] tracking-[0.2em] uppercase text-white/25 font-medium">Email</label>
-                  <input required type="email" placeholder="tu@email.com" className={inputClass} />
-                </div>
-              </div>
-              <div className="flex flex-col gap-1">
-                <label className="text-[10px] tracking-[0.2em] uppercase text-white/25 font-medium">Empresa / Organización</label>
-                <input type="text" placeholder="Nombre de tu empresa" className={inputClass} />
-              </div>
-              <div className="flex flex-col gap-1">
-                <label className="text-[10px] tracking-[0.2em] uppercase text-white/25 font-medium">Tu evento</label>
-                <textarea
-                  required
-                  rows={4}
-                  placeholder="Tipo de evento, fecha aproximada y servicios que necesitas..."
-                  className={`${inputClass} resize-none`}
-                />
-              </div>
-              <div className="flex justify-end pt-2">
-                <button
-                  type="submit"
-                  className="group inline-flex items-center gap-4 px-8 py-4 bg-[var(--accent)] text-black text-[11px] font-semibold tracking-[0.2em] uppercase hover:bg-white transition-colors duration-300"
-                >
-                  Solicitar propuesta
-                  <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-300" />
-                </button>
-              </div>
-            </form>
-          )}
-        </motion.div>
 
-        {/* Info row — email, ubicación, redes en línea */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.0, delay: 0.2 }}
-          className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8 border-t border-white/[0.07]"
-        >
-          <div>
-            <p className="text-[10px] tracking-[0.25em] uppercase text-white/20 mb-2">WhatsApp</p>
-            <a
-              href="https://api.whatsapp.com/send/?phone=3117883549&text&type=phone_number&app_absent=0"
-              target="_blank"
-              className="text-[13px] text-white/50 font-light hover:text-[var(--accent)] transition-colors duration-300"
+            {/* Subtitle */}
+            <motion.p
+              variants={fadeUp}
+              className="text-[14px] sm:text-[15px] text-white/35 font-light leading-[1.85] mb-10 sm:mb-14 max-w-[400px]"
             >
-              +57 311 788 3549
-            </a>
-          </div>
-          <div>
-            <p className="text-[10px] tracking-[0.25em] uppercase text-white/20 mb-2">Email</p>
-            <p className="text-[13px] text-white/50 font-light">hola@emmplay.com</p>
-          </div>
-          <div>
-            <p className="text-[10px] tracking-[0.25em] uppercase text-white/20 mb-2">Ubicación</p>
-            <p className="text-[13px] text-white/50 font-light">Manizales, Caldas</p>
-          </div>
-          <div>
-            <p className="text-[10px] tracking-[0.25em] uppercase text-white/20 mb-2">Redes</p>
-            <div className="flex items-center gap-4 mt-1">
-              {socials.map((s) => (
-                <Link
-                  key={s.label}
-                  href={s.href}
-                  target="_blank"
-                  aria-label={s.label}
-                  className="text-white/40 hover:text-[var(--accent)] transition-colors duration-300"
-                >
-                  {s.icon}
-                </Link>
-              ))}
-            </div>
+              Cuéntanos qué necesitas y te enviaremos una propuesta
+              en menos de 24 horas.
+            </motion.p>
+
+            {/* ── FORM CARD ── */}
+            <motion.div
+              variants={fadeUp}
+              className="w-full relative"
+              style={{
+                background: "linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.02) 100%)",
+                border: "1px solid rgba(0,174,239,0.12)",
+                boxShadow: "0 0 60px rgba(0,174,239,0.06), inset 0 1px 0 rgba(255,255,255,0.04)",
+              }}
+            >
+              {/* Corner accent top-left */}
+              <div className="absolute top-0 left-0 w-10 h-px bg-[var(--accent)] opacity-50" />
+              <div className="absolute top-0 left-0 w-px h-10 bg-[var(--accent)] opacity-50" />
+
+              <div className="p-7 sm:p-10">
+                {sent ? (
+                  <motion.div
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.9 }}
+                    className="flex flex-col gap-6 py-12"
+                  >
+                    <div className="w-14 h-px bg-[var(--accent)]" />
+                    <h3 className="font-display text-[clamp(44px,5vw,64px)] text-white tracking-[0.02em] leading-tight">
+                      SOLICITUD<br />RECIBIDA.
+                    </h3>
+                    <p className="text-[15px] text-white/30 font-light leading-relaxed max-w-sm">
+                      Te enviamos una propuesta en menos de 24 horas.
+                    </p>
+                  </motion.div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="flex flex-col gap-5 sm:gap-6">
+
+                    {/* Row 1 */}
+                    <div className="grid sm:grid-cols-2 gap-5 sm:gap-6">
+                      <div>
+                        <label className={labelClass}>Nombre</label>
+                        <input required type="text" placeholder="Tu nombre completo" className={inputClass} />
+                      </div>
+                      <div>
+                        <label className={labelClass}>Email</label>
+                        <input required type="email" placeholder="tu@email.com" className={inputClass} />
+                      </div>
+                    </div>
+
+                    {/* Row 2 */}
+                    <div>
+                      <label className={labelClass}>Empresa / Organización</label>
+                      <input type="text" placeholder="Nombre de tu empresa u organización" className={inputClass} />
+                    </div>
+
+                    {/* Row 3 */}
+                    <div>
+                      <label className={labelClass}>Información del evento</label>
+                      <textarea
+                        required
+                        rows={5}
+                        placeholder="Tipo de evento, fecha aproximada, ciudad y servicios que necesitas..."
+                        className={`${inputClass} resize-none`}
+                      />
+                    </div>
+
+                    {/* CTA — dentro de la card con margen */}
+                    <div className="pt-2 pb-1">
+                      <motion.button
+                        type="submit"
+                        whileHover={{ scale: 1.008 }}
+                        whileTap={{ scale: 0.997 }}
+                        className="group w-full flex items-center justify-center gap-4 h-12 sm:h-14 rounded-sm bg-[var(--accent)] text-[#040404] text-[12px] sm:text-[13px] font-bold tracking-[0.28em] uppercase transition-colors duration-300 hover:bg-white"
+                        style={{ boxShadow: "0 0 40px rgba(0,174,239,0.25), 0 0 80px rgba(0,174,239,0.08)" }}
+                      >
+                        <span>Solicitar propuesta</span>
+                        <ArrowRight size={14} className="group-hover:translate-x-1.5 transition-transform duration-300" />
+                      </motion.button>
+                    </div>
+
+                  </form>
+                )}
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+
+        {/* ══════════════════════════════════════
+            RIGHT COLUMN — 45% — Cinematic image
+        ══════════════════════════════════════ */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 2.2, ease: "easeOut" }}
+          className="w-full lg:w-[45%] relative overflow-hidden"
+          style={{ minHeight: "50vh" }}
+        >
+          {/* Image */}
+          <Image
+            src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1400&q=90&auto=format&fit=crop"
+            alt="Live event production"
+            fill
+            priority
+            loading="eager"
+            className="object-cover object-center"
+            style={{ filter: "brightness(0.45) saturate(1.1)" }}
+            sizes="(max-width: 1024px) 100vw, 45vw"
+          />
+
+          {/* Left-to-right fade — seamless blend with form */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(to right, var(--bg) 0%, rgba(4,4,4,0.6) 20%, rgba(4,4,4,0.1) 50%, transparent 100%)",
+            }}
+          />
+
+          {/* Top + bottom vignette */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)]/60 via-transparent to-[var(--bg)]/30" />
+
+          {/* Cyan color grade */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background:
+                "radial-gradient(ellipse 70% 50% at 70% 35%, rgba(0,174,239,0.09), transparent 65%)",
+            }}
+          />
+
+          {/* Statement — bottom */}
+          <div className="absolute bottom-10 sm:bottom-14 left-8 sm:left-12 right-8 sm:right-12">
+            <p className="font-display text-[clamp(16px,1.6vw,22px)] text-white/12 tracking-[0.1em] leading-[1.4]">
+              CREAMOS EXPERIENCIAS
+              <br />
+              QUE LAS PERSONAS
+              <br />
+              RECUERDAN.
+            </p>
           </div>
         </motion.div>
 

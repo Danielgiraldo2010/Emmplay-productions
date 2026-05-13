@@ -34,7 +34,7 @@ export default function Navbar() {
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 md:px-14 h-[80px] sm:h-[88px] flex items-center justify-between">
+        <div className="max-w-[1440px] mx-auto px-8 sm:px-12 md:px-20 h-[80px] sm:h-[88px] flex items-center justify-between">
 
           {/* Logo */}
           <Link href="/" className="flex items-center opacity-90 hover:opacity-100 transition-opacity duration-300">
@@ -44,9 +44,10 @@ export default function Navbar() {
               width={0}
               height={0}
               sizes="300px"
-              className="h-16 sm:h-20 md:h-24 w-auto object-contain"
+              className="h-24 sm:h-28 md:h-32 w-auto object-contain"
               loading="eager"
               priority
+              fetchPriority="high"
             />
           </Link>
 
@@ -104,7 +105,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="fixed inset-0 z-40 bg-[var(--bg)] flex flex-col justify-between px-6 pt-28 pb-12 md:hidden"
+            className="fixed inset-0 z-40 bg-[var(--bg)] flex flex-col justify-between px-8 sm:px-12 pt-28 pb-12 md:hidden"
           >
             <nav className="flex flex-col gap-2">
               {navLinks.map((link, i) => (

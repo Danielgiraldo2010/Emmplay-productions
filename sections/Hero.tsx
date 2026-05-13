@@ -34,7 +34,7 @@ export default function Hero() {
       />
 
       {/* Content */}
-      <div className="relative z-10 max-w-[1440px] mx-auto w-full px-6 sm:px-10 md:px-16 pb-12 sm:pb-20 md:pb-24">
+      <div className="relative z-10 max-w-[1440px] mx-auto w-full px-8 sm:px-12 md:px-20 pb-12 sm:pb-20 md:pb-24">
 
         <motion.p
           initial={{ opacity: 0, y: 10 }}

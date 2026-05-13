@@ -11,7 +11,7 @@ export default function Services() {
     <section id="services" className="bg-[var(--surface)]">
 
       {/* Header */}
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 md:px-16 pt-28 sm:pt-36 lg:pt-48 pb-16 sm:pb-20">
+      <div className="max-w-[1440px] mx-auto px-8 sm:px-12 md:px-20 pt-28 sm:pt-36 lg:pt-48 pb-16 sm:pb-20">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -73,7 +73,7 @@ export default function Services() {
 
             {/* Content */}
             <div
-              className={`absolute inset-0 flex items-end p-8 sm:p-12 lg:p-16 ${
+              className={`absolute inset-0 flex items-end p-8 sm:p-14 lg:p-20 ${
                 i % 2 === 0 ? "justify-start" : "justify-end"
               }`}
             >
