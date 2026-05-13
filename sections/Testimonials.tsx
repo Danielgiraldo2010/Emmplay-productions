@@ -54,8 +54,8 @@ export default function Testimonials() {
           style={{ aspectRatio: "21/8" }}
         >
           <Image
-            src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1800&q=80&auto=format&fit=crop"
-            alt="Live event atmosphere"
+            src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1800&q=85&auto=format&fit=crop"
+            alt="Stage with line array speakers"
             fill
             className="object-cover object-center"
             sizes="100vw"

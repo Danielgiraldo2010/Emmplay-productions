@@ -175,8 +175,8 @@ export default function Contact() {
         >
           {/* Image */}
           <Image
-            src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1400&q=90&auto=format&fit=crop"
-            alt="Live event production"
+            src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1400&q=90&auto=format&fit=crop"
+            alt="Stage with line array speakers"
             fill
             priority
             loading="eager"
