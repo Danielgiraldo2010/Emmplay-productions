@@ -36,7 +36,7 @@ export default function Portfolio() {
   const [hero, ...rest] = projects;
 
   return (
-    <section id="portfolio" className="py-28 sm:py-36 lg:py-48 px-8 sm:px-12 md:px-20 bg-[var(--bg)]">
+    <section id="portfolio" className="py-28 sm:py-36 lg:py-48 px-5 sm:px-8 md:px-12 lg:px-20 bg-[var(--bg)]">
       <div className="max-w-[1440px] mx-auto">
 
         {/* Header */}
@@ -86,7 +86,7 @@ export default function Portfolio() {
             <ArrowUpRight size={13} className="text-white/40 group-hover:text-[var(--accent)] transition-colors duration-300" />
           </div>
 
-          <div className="absolute bottom-0 left-0 right-0 p-7 sm:p-10 lg:p-12 flex items-end justify-between">
+          <div className="absolute bottom-0 left-0 right-0 px-8 sm:px-12 lg:px-14 pb-8 sm:pb-10 lg:pb-12 flex items-end justify-between">
             <div>
               <span className="text-[10px] tracking-[0.3em] uppercase text-[var(--accent)] mb-2 sm:mb-3 block opacity-75">
                 {hero.category} · {hero.year}
@@ -128,7 +128,7 @@ export default function Portfolio() {
                 <ArrowUpRight size={12} className="text-white/35 group-hover:text-[var(--accent)] transition-colors duration-300" />
               </div>
 
-              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-7">
+              <div className="absolute bottom-0 left-0 right-0 px-8 sm:px-10 pb-6 sm:pb-8">
                 <span className="text-[10px] tracking-[0.28em] uppercase text-[var(--accent)] mb-1.5 block opacity-70">
                   {item.category} · {item.year}
                 </span>

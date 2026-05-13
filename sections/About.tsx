@@ -29,7 +29,7 @@ export default function About() {
       </motion.div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-[1440px] mx-auto w-full px-8 sm:px-12 md:px-20 py-28 sm:py-36 lg:py-44">
+      <div className="relative z-10 max-w-[1440px] mx-auto w-full px-5 sm:px-8 md:px-12 lg:px-20 py-28 sm:py-36 lg:py-44">
         <motion.div
           initial="hidden"
           whileInView="visible"
