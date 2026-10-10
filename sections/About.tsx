@@ -1,86 +1,36 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { fadeUp, stagger } from "@/lib/animations";
+import Link from "next/link";
+import { stats } from "@/data/site";
 
 export default function About() {
   return (
-    <section id="about" className="relative min-h-screen flex items-center bg-[var(--bg)] overflow-hidden">
+    <section id="about" className="bg-[var(--bg)] py-20 sm:py-24 lg:py-28">
+      <div className="site-shell grid gap-14 lg:grid-cols-[.9fr_1.1fr] lg:items-center lg:gap-24">
+        <motion.div initial={{ y: 16 }} whileInView={{ y: 0 }} viewport={{ once: true }}>
+          <p className="eyebrow mb-5">Sobre Emmplay</p>
+          <h2 className="section-title">EXPERIENCIA QUE SE NOTA EN CADA MONTAJE.</h2>
+          <p className="mt-7 max-w-xl text-base leading-7 text-white/65">Acompañamos cada proyecto desde la idea hasta el último minuto del evento, con equipos profesionales y personal técnico capacitado.</p>
+          <Link href="#contact" className="group mt-8 inline-flex min-h-11 items-center gap-3 text-xs font-bold uppercase tracking-[0.13em] text-white transition-colors hover:text-[var(--accent-soft)]">Hablemos de tu evento <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" /></Link>
 
-      {/* Image */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 2.0, ease: "easeOut" }}
-        className="absolute inset-0 lg:left-[48%] overflow-hidden"
-      >
-        <Image
-          src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1400&q=90&auto=format&fit=crop"
-          alt="Emmplay producción en vivo"
-          fill
-          className="object-cover object-center"
-          sizes="(max-width: 1024px) 100vw, 52vw"
-        />
-        <div className="absolute inset-0 bg-[var(--bg)]/85 lg:hidden" />
-        <div className="absolute inset-0 hidden lg:block bg-gradient-to-r from-[var(--bg)] via-[var(--bg)]/30 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)]/60 via-transparent to-transparent" />
-      </motion.div>
+          <div className="mt-12 grid grid-cols-3 gap-5 border-t border-white/10 pt-8">
+            {stats.map((stat) => (
+              <div key={stat.label}>
+                <p className="font-display text-[clamp(1.3rem,2.5vw,2.5rem)] text-white">{stat.value}</p>
+                <p className="mt-2 text-[11px] uppercase leading-5 tracking-[0.08em] text-white/65">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-[1440px] mx-auto w-full px-6 sm:px-10 md:px-16 lg:px-24 py-28 sm:py-36 lg:py-44">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={stagger}
-          className="max-w-[520px]"
-        >
-          <motion.span variants={fadeUp} className="text-[10px] sm:text-[11px] font-medium tracking-[0.38em] uppercase text-[var(--accent)] mb-10 sm:mb-14 block">
-            Sobre Emmplay
-          </motion.span>
-
-          <motion.h2 variants={fadeUp} className="font-display text-[clamp(44px,6.5vw,88px)] leading-[0.9] text-white tracking-[0.01em] mb-10 sm:mb-14">
-            CADA EVENTO,
-            <br /> 
-            <span className="text-white/22">UNA OBRA.</span>
-          </motion.h2>
-
-          <motion.p variants={fadeUp} className="text-[13px] sm:text-[15px] text-white/40 leading-[1.9] font-light max-w-[360px] mb-6 sm:mb-8">
-            Somos una empresa de producción técnica especializada en audio profesional,
-            iluminación escénica, pantallas LED, broadcast y estructuras para eventos
-            de cualquier escala.
-          </motion.p>
-
-          <motion.p variants={fadeUp} className="text-[13px] sm:text-[14px] text-white/25 leading-[1.9] font-light max-w-[340px] mb-16 sm:mb-24">
-            Desde conciertos masivos hasta bodas íntimas, desde eventos corporativos
-            hasta giras internacionales — hacemos que cada momento se vea, se escuche
-            y se sienta extraordinario.
-          </motion.p>
-
-          {/* Stats */}
-          <motion.div variants={stagger} className="flex items-end gap-12 sm:gap-20">
-            <motion.div variants={fadeUp}>
-              <span className="font-display text-[clamp(56px,7vw,88px)] text-[var(--accent)] leading-none block">
-                500+
-              </span>
-              <span className="text-[10px] font-medium tracking-[0.25em] uppercase text-white/22 mt-3 block">
-                Eventos producidos
-              </span>
-            </motion.div>
-            <motion.div variants={fadeUp}>
-              <span className="font-display text-[clamp(56px,7vw,88px)] text-white/[0.10] leading-none block">
-                10+
-              </span>
-              <span className="text-[10px] font-medium tracking-[0.25em] uppercase text-white/22 mt-3 block">
-                Años de experiencia
-              </span>
-            </motion.div>
-          </motion.div>
+        <motion.div initial={{ scale: 0.98 }} whileInView={{ scale: 1 }} viewport={{ once: true }} className="relative aspect-[3/2] overflow-hidden">
+          <Image src="/images/emmplay/equipo.jpg" alt="Equipo de Emmplay durante el montaje de estructuras para eventos" fill sizes="(max-width: 1024px) 100vw, 52vw" className="object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent" />
         </motion.div>
       </div>
-
     </section>
   );
 }

@@ -2,126 +2,35 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-screen min-h-[600px] flex flex-col justify-end overflow-hidden">
+    <section id="inicio" className="relative flex min-h-[640px] items-center overflow-hidden pt-24 sm:min-h-[680px] lg:min-h-[min(78svh,820px)]">
+      <Image src="/images/emmplay/consola.jpg" alt="Concierto con sonido, pantallas e iluminación, publicado en la web de Emmplay" fill loading="eager" fetchPriority="high" sizes="100vw" className="object-cover object-center" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(2,7,12,.94)_0%,rgba(2,7,12,.75)_46%,rgba(2,7,12,.22)_100%)]" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#02070c]/85 via-transparent to-black/35" />
 
-      <Image
-        src="https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?w=1920&q=85&auto=format&fit=crop"
-        alt="Live production stage"
-        fill
-        priority
-        className="object-cover object-center"
-        sizes="100vw"
-      />
-
-      {/* Layered overlays */}
-      <div className="absolute inset-0 bg-black/55" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)] via-black/10 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent" />
-
-      {/* Cyan follow-spot */}
-      <div
-        className="absolute -top-20 left-1/2 -translate-x-1/2 w-[120%] max-w-[1200px] h-[60vh] opacity-[0.09] pointer-events-none"
-        style={{ background: "radial-gradient(ellipse 50% 100% at 50% 0%, #00aeef, transparent 65%)" }}
-      />
-      <div
-        className="absolute top-[30%] left-0 right-0 h-px opacity-[0.12] pointer-events-none"
-        style={{ background: "linear-gradient(90deg, transparent 5%, #00aeef 35%, #fff 50%, #00aeef 65%, transparent 95%)" }}
-      />
-
-      {/* Content */}
-      <div className="relative z-10 max-w-[1440px] mx-auto w-full px-6 sm:px-10 md:px-16 lg:px-24 pb-12 sm:pb-20 md:pb-24">
-
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.0, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="text-[10px] sm:text-[11px] font-medium tracking-[0.38em] uppercase text-[var(--accent)] mb-6 sm:mb-10"
-        >
-          Audio · Iluminación · LED · Broadcast · Estructuras
-        </motion.p>
-
-        <div className="overflow-hidden">
-          <motion.h1
-            initial={{ y: "108%" }}
-            animate={{ y: 0 }}
-            transition={{ duration: 1.2, delay: 0.42, ease: [0.16, 1, 0.3, 1] }}
-            className="font-display text-[clamp(58px,13.5vw,210px)] leading-[0.87] text-white tracking-[0.01em]"
-          >
-            SONIDO.
-          </motion.h1>
-        </div>
-        <div className="overflow-hidden">
-          <motion.h1
-            initial={{ y: "108%" }}
-            animate={{ y: 0 }}
-            transition={{ duration: 1.2, delay: 0.54, ease: [0.16, 1, 0.3, 1] }}
-            className="font-display text-[clamp(58px,13.5vw,210px)] leading-[0.87] text-white/40 tracking-[0.01em]"
-          >
-            LUZ.
-          </motion.h1>
-        </div>
-        <div className="overflow-hidden mb-10 sm:mb-16">
-          <motion.h1
-            initial={{ y: "108%" }}
-            animate={{ y: 0 }}
-            transition={{ duration: 1.2, delay: 0.66, ease: [0.16, 1, 0.3, 1] }}
-            className="font-display text-[clamp(58px,13.5vw,210px)] leading-[0.87] text-white/20 tracking-[0.01em]"
-          >
-            EXPERIENCIA.
-          </motion.h1>
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.2, delay: 1.1 }}
-          className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-8 sm:gap-12"
-        >
-          <p className="text-[13px] sm:text-[14px] text-white/40 max-w-[280px] leading-[1.9] font-light">
-            Producción técnica de eventos a escala internacional.
-            Conciertos, corporativos, bodas y touring.
+      <div className="site-shell relative z-10 py-20 sm:py-24">
+        <motion.div initial={{ y: 16 }} animate={{ y: 0 }} transition={{ duration: 0.8 }} className="max-w-[720px]">
+          <p className="eyebrow mb-6">Producción técnica de eventos</p>
+          <h1 className="hero-title font-display leading-[1.05] text-white">
+            CREAMOS EXPERIENCIAS <span className="text-[var(--accent-soft)]">INOLVIDABLES.</span>
+          </h1>
+          <p className="mt-7 max-w-[510px] text-base leading-7 text-white/65 sm:text-lg">
+            Sonido, iluminación, video y estructuras para hacer realidad eventos de cualquier escala.
           </p>
-
-          <div className="flex items-center gap-8 sm:gap-12">
-            <Link
-              href="#services"
-              className="group inline-flex items-center gap-3 text-[10px] sm:text-[11px] font-medium tracking-[0.25em] uppercase text-white/80 hover:text-[var(--accent)] transition-colors duration-500"
-            >
-              Ver servicios
-              <span className="block w-7 h-px bg-current group-hover:w-12 transition-all duration-500 ease-out" />
+          <div className="mt-9 flex flex-col items-start gap-5 sm:flex-row sm:items-center">
+            <Link href="#contact" className="group inline-flex h-14 items-center justify-center gap-3 rounded-sm bg-[var(--accent)] px-7 text-xs font-bold uppercase tracking-[0.13em] text-white transition-colors hover:bg-white hover:text-[#02070c]">
+              Cotizar evento <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
             </Link>
-            <Link
-              href="#contact"
-              className="inline-flex items-center gap-2 text-[10px] sm:text-[11px] font-medium tracking-[0.25em] uppercase text-white/30 hover:text-[var(--accent)] transition-colors duration-400"
-            >
-              Cotizar <ArrowRight size={10} />
+            <Link href="#services" className="group inline-flex min-h-11 items-center gap-3 text-xs font-bold uppercase tracking-[0.13em] text-white/75 transition-colors hover:text-white">
+              Ver servicios <span className="h-px w-9 bg-white/40 transition-all group-hover:w-14 group-hover:bg-white" />
             </Link>
           </div>
         </motion.div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2.0, duration: 1.0 }}
-        className="hidden sm:flex absolute right-8 md:right-12 bottom-16 flex-col items-center gap-3"
-      >
-        <span className="text-[8px] tracking-[0.4em] uppercase text-white/20" style={{ writingMode: "vertical-rl" }}>
-          Scroll
-        </span>
-        <motion.div
-          animate={{ scaleY: [0, 1, 0] }}
-          transition={{ repeat: Infinity, duration: 2.8, ease: "easeInOut" }}
-          className="w-px h-12 origin-top"
-          style={{ background: "linear-gradient(180deg, #00aeef 0%, transparent 100%)" }}
-        />
-      </motion.div>
     </section>
   );
 }

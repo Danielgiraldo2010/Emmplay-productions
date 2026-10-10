@@ -1,121 +1,41 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
-import { fadeUp, stagger } from "@/lib/animations";
+import Image from "next/image";
+import Link from "next/link";
 import { services } from "@/data/site";
 
 export default function Services() {
   return (
-    <section id="services" className="bg-[var(--surface)]">
+    <section id="services" className="bg-[var(--surface)] py-20 sm:py-24 lg:py-28">
+      <div className="site-shell">
+        <div className="mb-14 max-w-[680px]">
+          <p className="eyebrow mb-5">Lo que hacemos</p>
+          <h2 className="section-title">TODO LO QUE TU EVENTO NECESITA.</h2>
+          <p className="mt-5 max-w-xl text-base leading-7 text-white/65">Un solo equipo para planear, montar y operar toda la experiencia técnica.</p>
+        </div>
 
-      {/* Header */}
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 md:px-16 lg:px-24 pt-28 sm:pt-36 lg:pt-48 pb-16 sm:pb-20">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          variants={stagger}
-          className="flex flex-col sm:flex-row sm:items-end justify-between gap-6"
-        >
-          <div>
-            <motion.span variants={fadeUp} className="text-[10px] sm:text-[11px] font-medium tracking-[0.38em] uppercase text-[var(--accent)] mb-6 sm:mb-8 block">
-              Servicios
-            </motion.span>
-            <motion.h2 variants={fadeUp} className="font-display text-[clamp(44px,6vw,88px)] leading-[0.9] text-white tracking-[0.01em]">
-              TECNOLOGÍA
-              <br />
-              <span className="text-white/20">ESCÉNICA.</span>
-            </motion.h2>
-          </div>
-          <motion.p variants={fadeUp} className="text-[13px] sm:text-[14px] text-white/30 font-light max-w-[220px] leading-relaxed sm:text-right sm:pb-1">
-            Equipos de última generación para cualquier escala de evento.
-          </motion.p>
-        </motion.div>
-      </div>
-
-      {/* Banners fullwidth apilados */}
-      <div className="flex flex-col">
-        {services.map((service, i) => (
-          <motion.div
-            key={service.id}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 1.3, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] }}
-            className="group relative overflow-hidden cursor-pointer"
-            style={{ minHeight: "clamp(260px, 38vw, 520px)" }}
-          >
-            <Image
-              src={service.image}
-              alt={service.title.replace("\n", " ")}
-              fill
-              className="object-cover object-center transition-transform duration-[1.8s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
-              sizes="100vw"
-            />
-
-            {/* Overlays */}
-            <div className="absolute inset-0 bg-black/62 group-hover:bg-black/48 transition-colors duration-700" />
-            <div
-              className={`absolute inset-0 ${
-                i % 2 === 0
-                  ? "bg-gradient-to-r from-black/75 via-black/15 to-transparent"
-                  : "bg-gradient-to-l from-black/75 via-black/15 to-transparent"
-              }`}
-            />
-
-            {/* Cyan glow on hover */}
-            <div
-              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none"
-              style={{ background: "radial-gradient(ellipse 50% 70% at 50% 110%, rgba(0,174,239,0.07), transparent 65%)" }}
-            />
-
-            {/* Content */}
-            <div
-              className={`absolute inset-0 flex items-end px-8 sm:px-16 lg:px-24 pb-8 sm:pb-14 lg:pb-20 ${
-                i % 2 === 0 ? "justify-start" : "justify-end"
-              }`}
-            >
-              <div className={`max-w-md ${i % 2 !== 0 ? "text-right" : ""}`}>
-                <div className={`flex items-center gap-3 mb-4 sm:mb-6 ${i % 2 !== 0 ? "justify-end" : ""}`}>
-                  <span className="text-[10px] font-medium tracking-[0.32em] uppercase text-[var(--accent)] opacity-65">
-                    {service.id}
-                  </span>
-                  <span className="text-[10px] font-medium tracking-[0.22em] uppercase text-white/22">
-                    {service.tag}
-                  </span>
-                </div>
-
-                <h3 className="font-display text-[clamp(30px,4.2vw,64px)] text-white tracking-[0.01em] leading-[0.92] mb-4 sm:mb-6 whitespace-pre-line">
-                  {service.title}
-                </h3>
-
-                {/* Description — visible always on mobile, hover on desktop */}
-                <p className="text-[12px] sm:text-[13px] text-white/35 leading-relaxed font-light max-w-xs sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-500">
-                  {service.description}
-                </p>
-              </div>
-            </div>
-
-            {/* Arrow */}
-            <div
-              className={`absolute top-6 sm:top-8 ${
-                i % 2 !== 0 ? "left-6 sm:left-8" : "right-6 sm:right-8"
-              } w-9 h-9 border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:border-[var(--accent)]/40 transition-all duration-500`}
-            >
-              <ArrowUpRight size={13} className="text-white/35 group-hover:text-[var(--accent)] transition-colors duration-300" />
-            </div>
-
-            {/* Bottom accent line */}
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-[var(--accent)] scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left opacity-35" />
+        <div className="grid overflow-hidden border border-white/10 lg:grid-cols-[1.05fr_.95fr]">
+          <motion.div initial={false} className="relative min-h-[360px] sm:min-h-[420px] lg:min-h-[620px]">
+            <Image src="/images/emmplay/pantallas.jpg" alt="Pantalla LED curva e iluminación durante una presentación musical" fill sizes="(max-width: 1024px) 100vw, 52vw" className="object-cover object-[center_55%]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           </motion.div>
-        ))}
+
+          <div className="bg-[#061019] px-6 py-3 sm:px-9 lg:px-12 lg:py-8">
+            {services.map((service, index) => (
+              <motion.div key={service.id} initial={{ x: 8 }} whileInView={{ x: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.05 }} className="group grid grid-cols-[22px_minmax(0,1fr)_auto] items-center gap-2 border-b border-white/10 py-6 last:border-0 sm:grid-cols-[36px_minmax(0,1fr)_auto] sm:gap-3 sm:py-8">
+                <span className="text-[10px] font-semibold tracking-widest text-[var(--accent-soft)]">{service.id}</span>
+                <div>
+                  <h3 className="font-display text-[clamp(1.05rem,2vw,1.75rem)] uppercase leading-tight text-white [overflow-wrap:anywhere]">{service.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-white/65">{service.tag}</p>
+                </div>
+                <Link href={`https://wa.me/573116081380?text=${encodeURIComponent(`Hola Emmplay, quiero cotizar ${service.title.toLowerCase()} para un evento.`)}`} target="_blank" rel="noopener noreferrer" aria-label={`Cotizar ${service.title}`} className="grid h-11 w-11 place-items-center rounded-full border border-white/20 text-white/75 transition-colors hover:border-[var(--accent)] hover:text-[var(--accent-soft)]"><ArrowUpRight size={17} /></Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </div>
-
-      {/* Bottom padding */}
-      <div className="h-10 sm:h-14" />
-
     </section>
   );
 }

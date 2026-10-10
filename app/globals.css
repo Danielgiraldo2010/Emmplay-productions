@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap");
 @import "tailwindcss";
 
 :root {
-  --bg:       #040404;
-  --surface:  #0a0a0a;
-  --surface-2:#101010;
+  --bg:       #02070c;
+  --surface:  #061019;
+  --surface-2:#091722;
   --fg:       #f5f5f5;
   --fg-dim:   rgba(245, 245, 245, 0.48);
   --fg-muted: rgba(245, 245, 245, 0.22);
@@ -12,22 +12,25 @@
   --line:     rgba(245, 245, 245, 0.06);
   --line-mid: rgba(245, 245, 245, 0.10);
 
-  --accent:       #00aeef;
-  --accent-dark:  #0077a6;
-  --accent-glow:  rgba(0, 174, 239, 0.10);
+  /* Sampled from the blue bars of the original Emmplay logo. */
+  --brand-blue:       #1576a3;
+  --brand-blue-light: #2da2c6;
+  --brand-blue-dark:  #066382;
+  --accent:       var(--brand-blue);
+  --accent-soft:  var(--brand-blue-light);
+  --accent-dark:  var(--brand-blue-dark);
+  --accent-glow:  rgba(21, 118, 163, 0.14);
 }
 
 @theme inline {
   --color-background: var(--bg);
   --color-foreground:  var(--fg);
   --font-sans:    "Inter", system-ui, sans-serif;
-  --font-display: "Bebas Neue", sans-serif;
+  --font-display: "Montserrat", sans-serif;
 }
 
 *, *::before, *::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 html {
@@ -37,27 +40,37 @@ html {
   text-rendering: optimizeLegibility;
 }
 
+section[id] {
+  scroll-margin-top: 88px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-soft);
+  outline-offset: 5px;
+}
+
 body {
   background: var(--bg);
   color: var(--fg);
   font-family: "Inter", system-ui, sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.65;
   overflow-x: hidden;
 }
 
 ::selection {
   background: var(--accent);
-  color: #040404;
+  color: white;
 }
 
 ::-webkit-scrollbar        { width: 2px; }
 ::-webkit-scrollbar-track  { background: var(--bg); }
-::-webkit-scrollbar-thumb  { background: rgba(0,174,239,0.3); border-radius: 1px; }
+::-webkit-scrollbar-thumb  { background: color-mix(in srgb, var(--accent-soft) 30%, transparent); border-radius: 1px; }
 
 .font-display {
-  font-family: "Bebas Neue", sans-serif;
-  letter-spacing: 0.02em;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: -0.04em;
+  font-weight: 700;
 }
 
 /* Utility: very subtle cyan glow on hover */
@@ -65,5 +78,107 @@ body {
   transition: box-shadow 0.6s ease;
 }
 .hover-glow:hover {
-  box-shadow: 0 0 60px rgba(0, 174, 239, 0.07);
+  box-shadow: 0 24px 80px var(--accent-glow);
+}
+
+.site-shell {
+  --page-gutter: clamp(1.25rem, 2.5vw, 3rem);
+  width: calc(100% - var(--page-gutter) * 2);
+  margin-inline: auto;
+}
+
+.eyebrow {
+  color: var(--accent-soft);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(2rem, 3.6vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+  color: white;
+}
+
+.hero-title { font-size: clamp(2rem, 10vw, 2.4rem); }
+@media (min-width: 640px) {
+  .hero-title { font-size: clamp(2.4rem, 5.2vw, 5.2rem); }
+}
+
+footer a[aria-label] {
+  min-width: 44px;
+  min-height: 44px;
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.skip-link {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: var(--brand-blue-dark);
+  color: white;
+  transform: translateY(-200%);
+}
+.skip-link:focus { transform: translateY(0); }
+
+.blue-line {
+  height: 2px;
+  width: 3rem;
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
+
+.grid-fade {
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.brand-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: brand-scroll 50s linear infinite;
+}
+
+.brand-group {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: clamp(3rem, 6vw, 6rem);
+  padding-right: clamp(3rem, 6vw, 6rem);
+  list-style: none;
+}
+
+@keyframes brand-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.brand-marquee:hover .brand-track {
+  animation-play-state: paused;
+}
+
+@media (max-width: 640px) {
+  .site-shell { width: calc(100% - 2.5rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-track { animation: none; width: auto; will-change: auto; }
+  .brand-group { flex-wrap: wrap; justify-content: center; gap: 1rem 2rem; padding: 0 1.25rem; }
+  .brand-group[aria-hidden], .brand-group li[aria-hidden] { display: none; }
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

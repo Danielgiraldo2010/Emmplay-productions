@@ -2,15 +2,16 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import MotionPreferences from "@/components/MotionPreferences";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://emmplay.com"),
   title: {
-    default: "Emmplay — Live Production. Global Scale.",
+    default: "Emmplay Producciones — Eventos inolvidables",
     template: "%s | Emmplay",
   },
   description:
-    "Emmplay es una empresa de producción de eventos masivos, touring y contenido audiovisual de escala internacional. Festivales, conciertos, giras y experiencias de marca desde Colombia para el mundo.",
+    "Emmplay ofrece producción técnica de eventos, conciertos, corporativos y bodas con operación en Colombia y Estados Unidos.",
   keywords: [
     "producción de eventos",
     "live production",
@@ -31,16 +32,16 @@ export const metadata: Metadata = {
     locale: "es_CO",
     url: "https://emmplay.com",
     siteName: "Emmplay",
-    title: "Emmplay — Live Production. Global Scale.",
+    title: "Emmplay Producciones — Eventos inolvidables",
     description:
-      "Producción de eventos masivos, touring y experiencias audiovisuales de escala internacional.",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Emmplay" }],
+      "Producción técnica de eventos, conciertos, corporativos y bodas en Colombia y Estados Unidos.",
+    images: [{ url: "/logoemmplay.png", width: 372, height: 286, alt: "Emmplay Producciones" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Emmplay — Live Production. Global Scale.",
-    description: "We build the moment.",
-    images: ["/og-image.jpg"],
+    title: "Emmplay Producciones — Eventos inolvidables",
+    description: "Eventos que crean experiencias inolvidables.",
+    images: ["/logoemmplay.png"],
   },
   icons: {
     icon: "/logoemmplay.png",
@@ -57,9 +58,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es" className="h-full">
       <body className="min-h-full flex flex-col bg-[var(--bg)] text-[var(--fg)] antialiased">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <a href="#main-content" className="skip-link">Ir al contenido</a>
+        <MotionPreferences>
+          <Navbar />
+          <main id="main-content" tabIndex={-1} className="flex-1">{children}</main>
+          <Footer />
+        </MotionPreferences>
       </body>
     </html>
   );
