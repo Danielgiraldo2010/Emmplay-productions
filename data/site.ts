@@ -19,12 +19,12 @@ export const siteConfig = {
 };
 
 export const navLinks = [
-  { label: "Inicio", href: "#inicio" },
-  { label: "Servicios", href: "#services" },
-  { label: "Proyectos", href: "#portfolio" },
-  { label: "Nosotros", href: "#about" },
-  { label: "Tecnología", href: "#technology" },
-  { label: "Contacto", href: "#contact" },
+  { label: "Inicio", href: "/" },
+  { label: "Servicios", href: "/servicios" },
+  { label: "Proyectos", href: "/proyectos" },
+  { label: "Nosotros", href: "/nosotros" },
+  { label: "Equipos", href: "/equipos" },
+  { label: "Contacto", href: "/contacto" },
 ];
 
 export const services = [

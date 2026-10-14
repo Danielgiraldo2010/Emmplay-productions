@@ -41,7 +41,7 @@ html {
 }
 
 section[id] {
-  scroll-margin-top: 88px;
+  scroll-margin-top: 106px;
 }
 
 :focus-visible {
@@ -110,6 +110,16 @@ body {
   .hero-title { font-size: clamp(2.4rem, 5.2vw, 5.2rem); }
 }
 
+.hero-media {
+  animation: hero-breathe 18s ease-in-out infinite alternate;
+  transform-origin: center center;
+}
+
+@keyframes hero-breathe {
+  from { transform: scale(1); }
+  to { transform: scale(1.045); }
+}
+
 footer a[aria-label] {
   min-width: 44px;
   min-height: 44px;
@@ -173,6 +183,7 @@ footer a[aria-label] {
 
 @media (prefers-reduced-motion: reduce) {
   .brand-track { animation: none; width: auto; will-change: auto; }
+  .hero-media { animation: none; }
   .brand-group { flex-wrap: wrap; justify-content: center; gap: 1rem 2rem; padding: 0 1.25rem; }
   .brand-group[aria-hidden], .brand-group li[aria-hidden] { display: none; }
   html { scroll-behavior: auto; }

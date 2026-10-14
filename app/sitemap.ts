@@ -1,12 +1,12 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: "https://emmplay.com",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1,
-    },
-  ];
+  const routes = ["", "/servicios", "/proyectos", "/nosotros", "/equipos", "/tecnologia", "/contacto"];
+
+  return routes.map((route, index) => ({
+    url: `https://emmplay.com${route}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: index === 0 ? 1 : 0.8,
+  }));
 }

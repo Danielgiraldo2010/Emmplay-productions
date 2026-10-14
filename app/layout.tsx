@@ -56,7 +56,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className="h-full">
+    <html lang="es" className="h-full" data-scroll-behavior="smooth">
       <body className="min-h-full flex flex-col bg-[var(--bg)] text-[var(--fg)] antialiased">
         <a href="#main-content" className="skip-link">Ir al contenido</a>
         <MotionPreferences>

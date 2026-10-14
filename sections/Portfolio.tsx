@@ -21,16 +21,15 @@ export default function Portfolio() {
           <p className="max-w-xs text-base leading-7 text-white/65">Escenarios reales. Experiencias que hablan por nuestro trabajo.</p>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-4 lg:grid-cols-12 lg:grid-rows-2">
           {projects.map((project, index) => (
-            <motion.article key={project.title} initial={{ y: 16 }} whileInView={{ y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.07 }} className="group flex flex-col">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-t-sm">
-                <Image src={project.image} alt={project.alt} fill sizes="(max-width: 768px) 100vw, 33vw" style={{ objectPosition: project.position }} className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
-              </div>
-              <div className="flex-1 border-x border-b border-white/10 px-5 py-5">
-                <h3 className="font-display text-2xl leading-tight text-white sm:text-[1.75rem]">{project.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-white/65 sm:text-base">{project.subtitle}</p>
+            <motion.article key={project.title} initial={{ y: 16 }} whileInView={{ y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.07 }} className={`group relative min-h-[360px] overflow-hidden ${index === 0 ? "lg:col-span-7 lg:row-span-2 lg:min-h-[720px]" : "lg:col-span-5 lg:min-h-0"}`}>
+              <Image src={project.image} alt={project.alt} fill sizes={index === 0 ? "(max-width: 1024px) 100vw, 58vw" : "(max-width: 1024px) 100vw, 42vw"} style={{ objectPosition: project.position }} className="object-cover transition-transform duration-1000 group-hover:scale-[1.035]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-black/10" />
+              <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
+                <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--accent-soft)]">Galería Emmplay</p>
+                <h3 className="font-display text-2xl uppercase leading-tight text-white sm:text-3xl">{project.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-white/72 sm:text-base">{project.subtitle}</p>
               </div>
             </motion.article>
           ))}
